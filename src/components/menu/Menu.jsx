@@ -49,22 +49,26 @@ const Menu = () => {
           </li>
 
           <li>
-            <Link to="/votacao">Votação do Cardápio</Link>
-          </li>
-
-          <li>
              {isLogado ? ( 
-            <Link to="/receita">Cadastrar Receitas</Link>
+            <Link to="/receita">Produtos para doação</Link>
              ) : (
-              <Link to="/login">Login adm</Link>
+              <Link to="/"></Link>
             )} 
           </li>
 
           <li>
              {isLogado ? ( 
-            <Link to="/editar">Editar Receitas</Link>
+            <Link to="/receita">Cadastrar Novos produtos</Link>
+             ) : (
+              <Link to="/login">Login</Link>
+            )} 
+          </li>
+
+          <li>
+             {isLogado ? ( 
+            <Link to="/editar">Editar Produtos</Link>
             ) : (
-              <Link to="/cadastro">Cadastro adm</Link>
+              <Link to="/cadastro">Cadastro novo Usuario</Link>
             )} 
           </li>
         </ul>
