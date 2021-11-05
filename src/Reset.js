@@ -14,7 +14,6 @@ export default createGlobalStyle`
   } 
    
   *,button,input{
-    border: none;
-               
+    border: none;          
   }  
 `;

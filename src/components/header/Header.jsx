@@ -38,10 +38,10 @@ class Header extends Component {
               <Typewriter
                 onInit={(typewriter) => {
                   typewriter
-                    .typeString("OKOSHI")
+                    .typeString("Dmt")
                     .pauseFor(1000)
                     .deleteChars(10)
-                    .typeString("Okoshi")
+                    .typeString("Deméter")
                     .start(2000);
                 }}
               />
