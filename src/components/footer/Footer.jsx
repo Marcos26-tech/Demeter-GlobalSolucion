@@ -24,9 +24,7 @@ const Footer = () => {
   return (
     <>
       <StyledFooter>
-        <p>
-          Copyright &copy; Grupo Okoshi
-        </p>
+      <p>Copyright &copy; Grupo Okoshi - {new Date().getFullYear()}</p>
       </StyledFooter>
     </>
   );
