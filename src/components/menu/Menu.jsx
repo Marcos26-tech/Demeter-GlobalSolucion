@@ -6,7 +6,7 @@ const StyledMenu = styled.nav`
   margin-top: 2rem;
   width: 100%;
   height: 5rem;
-  background-color: black;
+  background-color: #ca3636;
   ul {
     height: 100%;
     list-style: none;
@@ -31,9 +31,9 @@ const StyledMenu = styled.nav`
   a:hover,
   a:active,
   a.active {
-    color: #64a546;
+    color: #d68984;
     padding-bottom: 0.25rem;
-    border-bottom: 4px solid #64a546;
+    border-bottom: 4px solid #2c0401;
   }
 `;
 
