@@ -7,6 +7,7 @@ import styled from "styled-components";
 const StyledHeader = styled.header`
   display: inline-block;
   width: 100%;
+  background-image: radial-gradient(circle at 56.16% 120.44%, #ff9052 0, #ff7f4f 16.67%, #fa6849 33.33%, #ec4940 50%, #dd2039 66.67%, #d10038 83.33%, #c8003c 100%);
   img {
     position: absolute;
     height: 80px;

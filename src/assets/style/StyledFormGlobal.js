@@ -9,7 +9,7 @@ export const Form = styled.form`
 `;
 
 export const FormWrapper = styled.div`
-  background-color: rgba(5, 5, 5, 0.993);
+  
   overflow: hidden;
   padding: 0 0 30px;
   margin: 3rem auto 1.5rem;

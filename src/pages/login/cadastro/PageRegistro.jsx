@@ -119,7 +119,7 @@ function Registro() {
     <FormWrapper>
       <FormBody>
         <FormHeader>
-          <h2>Cadastro Okoshi</h2>
+          <h2>Cadastro Deméter</h2>
         </FormHeader>
 
         {status.type === "success" ? (
@@ -135,8 +135,8 @@ function Registro() {
 
         <Form onSubmit={addUser} id="form">
 
-          <label><input type="radio" class="question" name="mercado" value="1" />Mercado</label>
-          <label><input type="radio" class="question" name="assistente" value="2" />Entidade Assistêncial</label>
+          <label><input type="radio" class="question" name="1" value="1" />Mercado</label>
+          <label><input type="radio" class="question" name="1" value="2" />Entidade Assistêncial</label>
 
           <FormFieldset>
             <label>Razão Social: </label>
@@ -161,12 +161,14 @@ function Registro() {
           </FormFieldset>
 
           <FormFieldset>
+          <select name="" id="">
             <optgroup label="Localização">
               <option value="norte">Zona Norte</option>
               <option value="sul">Zona Sul</option>
               <option value="leste">Zona Leste</option>
               <option value="oeste">Zona Oeste</option>
             </optgroup>
+            </select>
           </FormFieldset>
 
           <FormFieldset>
