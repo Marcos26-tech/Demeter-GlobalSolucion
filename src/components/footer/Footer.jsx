@@ -3,9 +3,10 @@ import styled from "styled-components";
 
 const StyledFooter = styled.footer`
   text-align: center;
-  background: linear-gradient(#000000, transparent);
-  padding: 1px;
+  background-image: linear-gradient(to right, #f6d365 0%, #fda085 100%);
+  padding: 5px;
   width: 100%;
+  
   position: relative;
   bottom: 0;
   p {
@@ -24,7 +25,7 @@ const Footer = () => {
   return (
     <>
       <StyledFooter>
-      <p>Copyright &copy; Grupo Okoshi - {new Date().getFullYear()}</p>
+      <p>Copyright &copy; Grupo Deméter - {new Date().getFullYear()}</p>
       </StyledFooter>
     </>
   );

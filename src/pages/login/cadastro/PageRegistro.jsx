@@ -161,14 +161,15 @@ function Registro() {
           </FormFieldset>
 
           <FormFieldset>
-          <select name="" id="">
+          <select>
             <optgroup label="Localização">
+              <option disabled selected>Selecione sua região</option>
               <option value="norte">Zona Norte</option>
               <option value="sul">Zona Sul</option>
               <option value="leste">Zona Leste</option>
               <option value="oeste">Zona Oeste</option>
             </optgroup>
-            </select>
+          </select>
           </FormFieldset>
 
           <FormFieldset>

@@ -9,7 +9,9 @@ export const Form = styled.form`
 `;
 
 export const FormWrapper = styled.div`
-  
+  background-color: #ffffff10;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   overflow: hidden;
   padding: 0 0 30px;
   margin: 3rem auto 1.5rem;
@@ -90,14 +92,15 @@ export const FormButton = styled.button`
   font-size: 14px;
   font-weight: 700;
   color: rgb(255, 255, 255);
-  background-color: rgb(25, 121, 6);
+  background-color: rgb(238, 49, 49);
   border: 0;
   border-radius: 35px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
   &:hover {
-    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
+    background-image: linear-gradient(to right, #f6d365 0%, #fda085 100%);
+    box-shadow: 0 15px 15px  #fda085;
     transform: translate(0, -5px);
   }
 `;
