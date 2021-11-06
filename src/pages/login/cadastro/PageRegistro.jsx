@@ -134,15 +134,39 @@ function Registro() {
         )}
 
         <Form onSubmit={addUser} id="form">
+
+          <label><input type="radio" class="question" name="mercado" value="1" />Mercado</label>
+          <label><input type="radio" class="question" name="assistente" value="2" />Entidade Assistêncial</label>
+
           <FormFieldset>
-            <label>Nome: </label>
+            <label>Razão Social: </label>
             <FormInput
               type="text"
               name="nome"
-              placeholder="Nome completo do usuário"
+              placeholder="Nome completo da empresa"
               onChange={valueInput}
               value={user.nome}
             />
+          </FormFieldset>
+
+          <FormFieldset>
+            <label>CNPJ: </label>
+            <FormInput
+              type="number"
+              name="cnpj"
+              placeholder="CNPJ da empresa"
+              onChange={valueInput}
+              value={user.nome}
+            />
+          </FormFieldset>
+
+          <FormFieldset>
+            <optgroup label="Localização">
+              <option value="norte">Zona Norte</option>
+              <option value="sul">Zona Sul</option>
+              <option value="leste">Zona Leste</option>
+              <option value="oeste">Zona Oeste</option>
+            </optgroup>
           </FormFieldset>
 
           <FormFieldset>
@@ -150,7 +174,7 @@ function Registro() {
             <FormInput
               type="email"
               name="email"
-              placeholder="Melhor e-mail do usuário"
+              placeholder="Melhor e-mail para cadastro"
               onChange={valueInput}
               value={user.email}
             />
