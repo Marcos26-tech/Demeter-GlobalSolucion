@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  Section,
   Form,
   FormWrapper,
   FormHeader,
@@ -59,45 +60,51 @@ const ForgetPassword = () => {
   }
 
   return (
-    <FormWrapper>
-      <FormBody>
-        <FormHeader>
-          <h2>Recuperação de Senha</h2>
-        </FormHeader>
+    <Section>
+      <FormWrapper>
+        <FormBody>
+          <FormHeader>
+            <h2>Recuperação de Senha</h2>
+            <p>
+              Informe seu e-mail cadastrado e enviaremos um link para você
+              redefinir sua senha.
+            </p>
+          </FormHeader>
 
-        {status.type === "success" ? (
-          <p style={{ color: "#033d11" }}>{status.mensagem}</p>
-        ) : (
-          ""
-        )}
-        {status.type === "error" ? (
-          <p style={{ color: "#ff0000" }}>{status.mensagem}</p>
-        ) : (
-          ""
-        )}
+          {status.type === "success" ? (
+            <p style={{ color: "#033d11" }}>{status.mensagem}</p>
+          ) : (
+            ""
+          )}
+          {status.type === "error" ? (
+            <p style={{ color: "#ff0000" }}>{status.mensagem}</p>
+          ) : (
+            ""
+          )}
 
-        <Form onSubmit={addUser}>
+          <Form onSubmit={addUser}>
+            <FormFieldset>
+              <label>E-mail:</label>
+              <FormInput
+                type="email"
+                name="email"
+                placeholder="Email cadastrado"
+                onChange={valueInput}
+                value={user.email}
+              />
+            </FormFieldset>
+
+            <FormFieldset>
+              <FormButton type="submit">Recuperar a Senha</FormButton>
+            </FormFieldset>
+          </Form>
+
           <FormFieldset>
-            <label>E-mail:</label>
-            <FormInput
-              type="email"
-              name="email"
-              placeholder="Email cadastrado"
-              onChange={valueInput}
-              value={user.email}
-            />
+            <FormLink href="./login">Ir para o login</FormLink>
           </FormFieldset>
-
-          <FormFieldset>
-            <FormButton type="submit">Recuperar a Senha</FormButton>
-          </FormFieldset>
-        </Form>
-
-        <FormFieldset>
-          <FormLink href="./login">Ir para o login</FormLink>
-        </FormFieldset>
-      </FormBody>
-    </FormWrapper>
+        </FormBody>
+      </FormWrapper>
+    </Section>
   );
 };
 export default ForgetPassword;

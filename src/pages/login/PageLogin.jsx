@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  Section,
   Form,
   FormWrapper,
   FormHeader,
@@ -84,66 +85,68 @@ function FormLogin() {
   }
 
   return (
-    <FormWrapper>
-      <FormBody>
-        <FormHeader>
-          <h2>Login Okoshi</h2>
-        </FormHeader>
+    <Section>
+      <FormWrapper>
+        <FormBody>
+          <FormHeader>
+            <h2>Login Okoshi</h2>
+          </FormHeader>
 
-        {status.type === "success" ? (
-          <p style={{ color: "#08b842fd" }}>{status.mensagem}</p>
-        ) : (
-          ""
-        )}
-        {status.type === "error" ? (
-          <p style={{ color: "#ff0000" }}>{status.mensagem}</p>
-        ) : (
-          ""
-        )}
+          {status.type === "success" ? (
+            <p style={{ color: "#08b842fd" }}>{status.mensagem}</p>
+          ) : (
+            ""
+          )}
+          {status.type === "error" ? (
+            <p style={{ color: "#ff0000" }}>{status.mensagem}</p>
+          ) : (
+            ""
+          )}
 
-        <Form onSubmit={addUser} id="form">
+          <Form onSubmit={addUser} id="form">
+            <FormFieldset>
+              <label>E-mail:</label>
+              <FormInput
+                type="email"
+                name="email"
+                placeholder="Email cadastrado"
+                onChange={valueInput}
+                value={user.email}
+                required
+              />
+            </FormFieldset>
+
+            <FormFieldset>
+              <label>Senha: </label>
+              <FormInput
+                type="password"
+                name="password"
+                placeholder="Senha Cadastrada"
+                autoComplete="on"
+                onChange={valueInput}
+                value={user.password}
+              />
+            </FormFieldset>
+
+            <FormFieldset>
+              <FormButton type="submit" onClick={() => someLogin()}>
+                Login
+              </FormButton>
+            </FormFieldset>
+          </Form>
+
           <FormFieldset>
-            <label>E-mail:</label>
-            <FormInput
-              type="email"
-              name="email"
-              placeholder="Email cadastrado"
-              onChange={valueInput}
-              value={user.email}
-              required
-            />
+            <FormLink href="/cadastro">
+              Não tem uma conta Clique aqui e junte-se a nós!
+            </FormLink>
           </FormFieldset>
 
           <FormFieldset>
-            <label>Senha: </label>
-            <FormInput
-              type="password"
-              name="password"
-              placeholder="Senha Cadastrada"
-              autoComplete="on"
-              onChange={valueInput}
-              value={user.password}
-            />
+            <FormLink href="/forgetPassword">Esqueceu sua senha!</FormLink>
           </FormFieldset>
-
-          <FormFieldset>
-            <FormButton type="submit" onClick={() => someLogin()}>
-              Login
-            </FormButton>
-          </FormFieldset>
-        </Form>
-
-        <FormFieldset>
-          <FormLink href="/cadastro">
-            Não tem uma conta Clique aqui e junte-se a nós!
-          </FormLink>
-        </FormFieldset>
-
-        <FormFieldset>
-          <FormLink href="/forgetPassword">Esqueceu sua senha!</FormLink>
-        </FormFieldset>
-      </FormBody>
-    </FormWrapper>
+        </FormBody>
+      </FormWrapper>
+    </Section>
   );
 }
 export default FormLogin;

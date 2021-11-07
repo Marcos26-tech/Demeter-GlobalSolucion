@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  Section,
   Form,
   FormWrapper,
   FormHeader,
@@ -116,97 +117,106 @@ function Registro() {
   }
 
   return (
-    <FormWrapper>
-      <FormBody>
-        <FormHeader>
-          <h2>Cadastro Deméter</h2>
-        </FormHeader>
+    <Section>
+      <FormWrapper>
+        <FormBody>
+          <FormHeader>
+            <h2>Cadastro Deméter</h2>
+          </FormHeader>
 
-        {status.type === "success" ? (
-          <p style={{ color: "#033d11" }}>{status.mensagem}</p>
-        ) : (
-          ""
-        )}
-        {status.type === "error" ? (
-          <p style={{ color: "#ff0000" }}>{status.mensagem}</p>
-        ) : (
-          ""
-        )}
+          {status.type === "success" ? (
+            <p style={{ color: "#033d11" }}>{status.mensagem}</p>
+          ) : (
+            ""
+          )}
+          {status.type === "error" ? (
+            <p style={{ color: "#ff0000" }}>{status.mensagem}</p>
+          ) : (
+            ""
+          )}
 
-        <Form onSubmit={addUser} id="form">
+          <Form onSubmit={addUser} id="form">
+            <label>
+              <input type="radio" class="question" name="1" value="1" />
+              Mercado
+            </label>
+            <label>
+              <input type="radio" class="question" name="1" value="2" />
+              Entidade Assistêncial
+            </label>
 
-          <label><input type="radio" class="question" name="1" value="1" />Mercado</label>
-          <label><input type="radio" class="question" name="1" value="2" />Entidade Assistêncial</label>
+            <FormFieldset>
+              <label>Razão Social: </label>
+              <FormInput
+                type="text"
+                name="nome"
+                placeholder="Nome completo da empresa"
+                onChange={valueInput}
+                value={user.nome}
+              />
+            </FormFieldset>
+
+            <FormFieldset>
+              <label>CNPJ: </label>
+              <FormInput
+                type="number"
+                name="cnpj"
+                placeholder="CNPJ da empresa"
+                onChange={valueInput}
+                value={user.nome}
+              />
+            </FormFieldset>
+
+            <FormFieldset>
+              <select>
+                <optgroup label="Localização">
+                  <option disabled selected>
+                    Selecione sua região
+                  </option>
+                  <option value="norte">Zona Norte</option>
+                  <option value="sul">Zona Sul</option>
+                  <option value="leste">Zona Leste</option>
+                  <option value="oeste">Zona Oeste</option>
+                </optgroup>
+              </select>
+            </FormFieldset>
+
+            <FormFieldset>
+              <label>E-mail:</label>
+              <FormInput
+                type="email"
+                name="email"
+                placeholder="Melhor e-mail para cadastro"
+                onChange={valueInput}
+                value={user.email}
+              />
+            </FormFieldset>
+
+            <FormFieldset>
+              <label>Senha: </label>
+              <FormInput
+                type="password"
+                name="senha"
+                placeholder="Senha para acessar o site"
+                autoComplete="on"
+                onChange={valueInput}
+                value={user.senha}
+              />
+            </FormFieldset>
+
+            <FormFieldset>
+              <FormButton type="submit" onClick={() => someCadastrar()}>
+                Cadastrar
+              </FormButton>
+            </FormFieldset>
+          </Form>
 
           <FormFieldset>
-            <label>Razão Social: </label>
-            <FormInput
-              type="text"
-              name="nome"
-              placeholder="Nome completo da empresa"
-              onChange={valueInput}
-              value={user.nome}
-            />
+            <FormLink href="./login">Já tem conta Clique aqui!</FormLink>
           </FormFieldset>
-
-          <FormFieldset>
-            <label>CNPJ: </label>
-            <FormInput
-              type="number"
-              name="cnpj"
-              placeholder="CNPJ da empresa"
-              onChange={valueInput}
-              value={user.nome}
-            />
-          </FormFieldset>
-
-          <FormFieldset>
-          <select>
-            <optgroup label="Localização">
-              <option disabled selected>Selecione sua região</option>
-              <option value="norte">Zona Norte</option>
-              <option value="sul">Zona Sul</option>
-              <option value="leste">Zona Leste</option>
-              <option value="oeste">Zona Oeste</option>
-            </optgroup>
-          </select>
-          </FormFieldset>
-
-          <FormFieldset>
-            <label>E-mail:</label>
-            <FormInput
-              type="email"
-              name="email"
-              placeholder="Melhor e-mail para cadastro"
-              onChange={valueInput}
-              value={user.email}
-            />
-          </FormFieldset>
-
-          <FormFieldset>
-            <label>Senha: </label>
-            <FormInput
-              type="password"
-              name="senha"
-              placeholder="Senha para acessar o site"
-              autoComplete="on"
-              onChange={valueInput}
-              value={user.senha}
-            />
-          </FormFieldset>
-
-          <FormFieldset>
-            <FormButton type="submit" onClick={() => someCadastrar()}>
-              Cadastrar
-            </FormButton>
-          </FormFieldset>
-        </Form>
-
-        <FormFieldset>
-          <FormLink href="./login">Já tem conta Clique aqui!</FormLink>
-        </FormFieldset>
-      </FormBody>
-    </FormWrapper>
+        </FormBody>
+      </FormWrapper>
+    </Section>
   );
 }
 export default Registro;

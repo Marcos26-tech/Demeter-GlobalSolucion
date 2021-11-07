@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+export const Section = styled.section`
+  width: 100%;
+  height: 90vh;
+  padding-top: 5rem;
+  background-size: cover;
+  position: relative;
+  background-image: url("https://financialtribune.com/sites/default/files/field/image/17january/04-zs-pomegranates_204-ab.jpg");
+`;
+
 export const Form = styled.form`
   width: 100%;
   height: 21rem;
@@ -13,8 +22,8 @@ export const FormWrapper = styled.div`
   backdrop-filter:blur(12px);
   -webkit-backdrop-filter: blur(12px);
   overflow: hidden;
-  padding: 0 0 30px;
-  margin: 3rem auto 1.5rem;
+  padding: 0px 0 30px;
+  margin: auto;
   width: 500px;
   height: 670px;
   font-family: Quicksand, arial, sans-serif;
