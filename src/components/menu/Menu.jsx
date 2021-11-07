@@ -5,7 +5,7 @@ import styled from "styled-components";
 const StyledMenu = styled.nav`
   margin-top: 2rem;
   width: 100%;
-  height: 5rem;
+  height: 3rem;
   background-color: #ca3636;
   ul {
     height: 100%;

@@ -6,7 +6,6 @@ const StyledFooter = styled.footer`
   background-image: linear-gradient(to right, #f6d365 0%, #fda085 100%);
   padding: 5px;
   width: 100%;
-  
   position: relative;
   bottom: 0;
   p {

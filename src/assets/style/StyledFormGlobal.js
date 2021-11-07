@@ -31,7 +31,7 @@ export const FormHeader = styled.header`
   padding-top: 24px;
   padding-bottom: 19px;
   h2 {
-    color: rgba(8, 184, 66, 0.993);
+    color: #ff9052;
     font-size: 22px;
     font-weight: bold;
     text-align: center;
