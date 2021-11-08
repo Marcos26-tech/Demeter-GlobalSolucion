@@ -23,6 +23,7 @@ const StyledMenu = styled.nav`
   }
 
   a {
+    font-weight: bold;
     color: white;
     text-decoration: none;
     text-transform: uppercase;
@@ -31,9 +32,9 @@ const StyledMenu = styled.nav`
   a:hover,
   a:active,
   a.active {
-    color: #d68984;
+    color: #1a0f0e;
     padding-bottom: 0.25rem;
-    border-bottom: 4px solid #2c0401;
+    font-weight: bold;
   }
 `;
 
