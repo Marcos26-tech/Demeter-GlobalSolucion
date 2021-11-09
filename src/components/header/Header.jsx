@@ -10,9 +10,9 @@ const StyledHeader = styled.header`
   background-image: radial-gradient(circle at 56.16% 120.44%, #ff9052 0, #ff7f4f 16.67%, #fa6849 33.33%, #ec4940 50%, #dd2039 66.67%, #d10038 83.33%, #c8003c 100%);
   img {
     position: absolute;
-    height: 80px;
-    width: 80px;
-    padding: 10px 195px 0 0;
+    height: 95px;
+    width: 95px;
+    padding: 10px 5px 0 0;
   }
 `;
 
@@ -22,7 +22,7 @@ const Stylednovo = styled.div`
   width: 100%;
   p {
     position: relative;
-    margin: 0 0 0 170px;
+    margin: 0 0 0 250px;
     padding-top: 2rem;
     font-size: 35px;
     font-weight: bold;

@@ -1,30 +1,5 @@
 import styled from "styled-components";
 
-export const DivHome = styled.div`
-  margin: 0 auto 0;
-  padding: 0 20px;
-  width: 100%;
-  max-width: 1200px;
-  margin-top: 5rem;
-`;
-
-export const H = styled.h1`
-  text-align: center;
-  line-height: 1.5rem;
-  :after {
-    content: "";
-    display: block;
-    border-bottom: 1px solid #121212;
-    margin: -12px 0 35px;
-  }
-`;
-
-export const Span = styled.span`
-  background-color: #ffffff;
-  padding: 0 9px 0 10px;
-`;
-
-
 export const Container = styled.div`
   margin: 1rem 0 0;
   padding: 0 50px;
