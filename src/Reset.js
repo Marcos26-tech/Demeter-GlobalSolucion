@@ -11,7 +11,16 @@ export default createGlobalStyle`
   
   html,body, #root{
     height: 100%;
-    
+    ::-webkit-scrollbar{
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track{
+        background: #ccc;
+    }
+    ::-webkit-scrollbar-thumb{
+        background: linear-gradient(180deg,#c8003c  0%, #fda085  100%);
+        border-radius: 24px;
+    }
   } 
    
   *,button,input{
