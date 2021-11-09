@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   width: 100%;
-  height: 90vh;
+  height: 120%;
   padding-top: 5rem;
   background-size: cover;
   position: relative;
@@ -23,7 +23,7 @@ export const FormWrapper = styled.div`
   -webkit-backdrop-filter: blur(12px);
   overflow: hidden;
   padding: 0px 0 30px;
-  margin: auto;
+  margin: 0 auto 0;
   width: 500px;
   height: 670px;
   font-family: Quicksand, arial, sans-serif;

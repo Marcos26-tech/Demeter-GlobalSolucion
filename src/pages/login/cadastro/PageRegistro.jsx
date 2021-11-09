@@ -137,11 +137,11 @@ function Registro() {
 
           <Form onSubmit={addUser} id="form">
             <label>
-              <input type="radio" class="question" name="1" value="1" />
-              Mercado
+              <input type="radio" class="question" name="1" value="supermercado" />
+              SuperMercado
             </label>
             <label>
-              <input type="radio" class="question" name="1" value="2" />
+              <input type="radio" class="question" name="1" value="entidade" />
               Entidade Assistêncial
             </label>
 
