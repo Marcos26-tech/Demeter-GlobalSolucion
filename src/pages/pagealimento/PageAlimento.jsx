@@ -3,24 +3,24 @@ import React, { useState, useEffect } from "react";
 import alimento_1 from "../../assets/img/alimentos/banana.jpg";
 
 
-import AlimentoContainer from "../../components/cardcontainer/CardContainer";
-import CardEditacao from "../../components/card/CardEditação";
+import CardContainer from "../../components/cardcontainer/CardContainer";
+import CardHome from "../../components/cardcontainer/CardHome";
 import { DivHome, H, Span } from "../../assets/style/StyleGloblal";
 
 const images = {
-    1: alimento_1,
+  1: alimento_1,
 };
 
-function PageEditar() {
-  const [alimentos, setAlimentos] = useState([]);
+const PageAlimento = () => {
+  const [alimentos, setalimentos] = useState([]);
 
   useEffect(() => {
-    fetch("/rest/menu/")
+    fetch("/rest/menu/todos")
       .then((resp) => {
         return resp.json();
       })
       .then((resp) => {
-        setAlimentos(resp);
+        setalimentos(resp);
       })
       .catch((error) => {
         console.log(error);
@@ -31,23 +31,25 @@ function PageEditar() {
     <>
       <DivHome>
         <H>
-          <Span>Controle o estoque dos Alimentos</Span>
+          <Span>As alimentos disponiveis para doação</Span>
         </H>
-        <AlimentoContainer>
+
+        <CardContainer>
           {alimentos.map((alimento) => (
-            <CardEditacao
+            <CardHome
               key={alimento.id}
               id={alimento.id}
               foto={images[alimento.id]}
               nome={alimento.nomeAlimento}
               calorias={alimento.quantidade}
-              alimento={alimento.validade}
-            />
+              validade={alimento.validade}>
+            </CardHome>
           ))}
-        </AlimentoContainer>
+        </CardContainer>
+
       </DivHome>
     </>
   );
-}
+};
 
-export default PageEditar;
+export default PageAlimento;

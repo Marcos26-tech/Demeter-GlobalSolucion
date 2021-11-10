@@ -53,7 +53,7 @@ const Menu = () => {
 
           <li>
              {isentididade ? ( 
-            <Link to="/receita">Alimentos para doação</Link>
+            <Link to="/alimentos">Alimentos para doação</Link>
              ) : (
               <Link to="/"></Link>
             )} 
@@ -61,7 +61,7 @@ const Menu = () => {
 
           <li>
              {isLogado ? ( 
-            <Link to="/receita">Cadastrar alimentos</Link>
+            <Link to="/PageCadastroAlimento">Cadastrar alimentos</Link>
              ) : (
               <Link to="/login">Login</Link>
             )} 

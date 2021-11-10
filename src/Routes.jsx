@@ -4,6 +4,9 @@ import Home from "./pages/pagehome/PageHome";
 import login from "./pages/login/PageLogin";
 import cadastro from "./pages/login/cadastro/PageRegistro";
 import forgetPassword from "./pages/login/setsenha/PageForgetPassword"
+import editaralimento from "./pages/pageeditarproduto/PageEditar"
+import cadastroalimento from "./pages/pagecadastroalimento/PageCadastroAlimento"
+import alimento from "./pages/pagealimento/PageAlimento"
 
 
 function Routes() {
@@ -15,6 +18,9 @@ function Routes() {
         <Route path="/login" component={login} />
         <Route path="/cadastro" component={cadastro} />
         <Route path="/forgetPassword" component={forgetPassword} />
+        <Route path="/editar" component={editaralimento} />
+        <Route path="/PageCadastroAlimento" component={cadastroalimento} />
+        <Route path="/alimento" component={alimento} />
       </Switch>
     </>
   );
