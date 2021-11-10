@@ -89,9 +89,9 @@ function PageHome() {
       </Section>
       <Section>
         <div>
-          <h2>Rank dos doadores que abraçaram a nossa causa</h2>
+          <h2>Rank dos doadores que abraçaram a causa</h2>
           <h3>
-            Afinal todos são bem vindos a contribuir com a nossa causa seja voce
+            Afinal todos são bem vindos a contribuir com a nossa causa seja você
             tambem um doador.
           </h3>
         </div>
