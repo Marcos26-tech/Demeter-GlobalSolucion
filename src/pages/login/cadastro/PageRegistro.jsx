@@ -9,6 +9,7 @@ import {
   FormInput,
   FormButton,
   FormLink,
+  Forml,
 } from "../../../assets/style/StyledFormGlobal";
 
 function Registro() {
@@ -19,6 +20,8 @@ function Registro() {
     nome: "",
     email: "",
     senha: "",
+    cnpj: "",
+    zona: "",
   });
 
   const [status, setStatus] = useState({
@@ -45,7 +48,7 @@ function Registro() {
       },
       body: JSON.stringify(user),
     }).then(() => {
-      window.location = "/home";
+      window.location = "/pagecadastroalimento";
     });
 
     if (saveDataForm) {
@@ -72,6 +75,8 @@ function Registro() {
       name: user.nome,
       email: user.email,
       password: user.senha,
+      cnpj: user.cnpj,
+      zona:user.zona,
     });
 
     isLogado.push({
@@ -111,7 +116,7 @@ function Registro() {
     if (user.nome && user.email && user.senha && user.senha.length > 6) {
       return (
         (document.getElementById("form").style.visibility = "hidden"),
-        window.location.replace("/receita")
+        window.location.replace("/PageCadastroAlimento")
       );
     }
   }
@@ -163,7 +168,7 @@ function Registro() {
                 name="cnpj"
                 placeholder="CNPJ da empresa"
                 onChange={valueInput}
-                value={user.nome}
+                value={user.cnpj}
               />
             </FormFieldset>
 
@@ -210,12 +215,13 @@ function Registro() {
               </FormButton>
             </FormFieldset>
           </Form>
-
-          <FormFieldset>
-            <FormLink href="./login">Já tem conta Clique aqui!</FormLink>
-          </FormFieldset>
         </FormBody>
+        <Forml>
+          <FormLink href="./login">Já tem conta Clique aqui!</FormLink>
+        </Forml>
+        
       </FormWrapper>
+      
     </Section>
   );
 }

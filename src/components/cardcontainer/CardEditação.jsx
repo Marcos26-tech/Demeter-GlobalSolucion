@@ -1,6 +1,6 @@
 import { React, useState } from "react";
 import styled from "styled-components";
-import Modal from "./MostraModal";
+import Modal from "./MotraModal";
 import { Button } from "./CardReceita";
 
 const Produto = styled.div`

@@ -89,7 +89,7 @@ function FormLogin() {
       <FormWrapper>
         <FormBody>
           <FormHeader>
-            <h2>Login Okoshi</h2>
+            <h2>Login Deméter</h2>
           </FormHeader>
 
           {status.type === "success" ? (

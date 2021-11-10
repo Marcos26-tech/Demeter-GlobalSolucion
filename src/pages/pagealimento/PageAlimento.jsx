@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-
-import alimento_1 from "../../assets/img/alimentos/banana.jpg";
-
-
 import CardContainer from "../../components/cardcontainer/CardContainer";
 import CardHome from "../../components/cardcontainer/CardHome";
 import { DivHome, H, Span } from "../../assets/style/StyleGloblal";
+
+import alimento_1 from "../../assets/img/alimentos/banana.jpg";
 
 const images = {
   1: alimento_1,
