@@ -13,16 +13,20 @@ const Section = styled.section`
 
 const Div = styled.div`
   width: 550px;
-  margin-left: 10em;
+  margin-left: 6em;
+  padding: 10px;
+  text-align: justify;
   h1 {
-    font-size: 4em;
+    font-size: 2em;
     position: relative;
     display: block;
+    margin: 10px;
   }
   p {
-    font-size: 1.5em;
+    font-size: 1.2em;
     position: relative;
     display: block;
+    margin: 10px;
   }
 `;
 
@@ -38,8 +42,17 @@ function PageHome() {
     <>
       <Section>
         <Div>
-          <h1>titulo</h1>
-          <p>vamos falar aqui sobre inicial</p>
+          <h1>UMA NOVA FORMA DE FAZER DOAÇOES PARA QUEM MAIS PRECISA!</h1>
+          <p>
+            O projeto consiste em que tanto os supermercados quanto as entidades
+            assistenciais possam se cadastrar para ter acesso às funcionalidades
+            da plataforma. Os supermercados podem cadastrar os produtos que
+            estejam com o prazo de validade próximo ao vencimento, informando as
+            características do produto, como nome, quantidade, localização e
+            data de validade. Já as entidades assistenciais podem verificar os
+            alimentos disponíveis em sua localidade, podendo reservar aqueles
+            que desejar, para posterior coleta no ponto informado pelo sistema.
+          </p>
         </Div>
         <Divi>
           <ShowSlide />
@@ -47,11 +60,40 @@ function PageHome() {
       </Section>
       <Section>
         <div>
-          <iframe src="https://giphy.com/embed/gi7h31nLA9c6DVxpyn"></iframe>
+          <iframe
+            src="https://giphy.com/embed/gi7h31nLA9c6DVxpyn"
+            width="200"
+            height="150"
+          ></iframe>
         </div>
         <div>
-          <h2>Sobre nos</h2>
-          <h3>aqui escreveremos sobre a pag</h3>
+          <h2>Quem somos?</h2>
+          <h3>
+            Deméter nasceu com a finalidade é reduzir a distância entre a comida
+            abundante que seria desperdiçada e aqueles que a necessitam e,
+            infelizmente, não tem acesso a ela, sobretudo pela condição
+            socioeconômica.
+          </h3>
+        </div>
+      </Section>
+      <Section>
+        <div>
+          <h2>Como funciona?</h2>
+          <h3>
+            Deméter nasceu com a finalidade é reduzir a distância entre a comida
+            abundante que seria desperdiçada e aqueles que a necessitam e,
+            infelizmente, não tem acesso a ela, sobretudo pela condição
+            socioeconômica.
+          </h3>
+        </div>
+      </Section>
+      <Section>
+        <div>
+          <h2>Rank dos doadores que abraçaram a nossa causa</h2>
+          <h3>
+            Afinal todos são bem vindos a contribuir com a nossa causa seja voce
+            tambem um doador.
+          </h3>
         </div>
       </Section>
     </>

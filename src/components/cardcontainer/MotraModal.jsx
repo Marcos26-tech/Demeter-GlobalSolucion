@@ -28,7 +28,8 @@ function MostraModal(props) {
 
   const [novoalimento, setAlimento] = useState({
     nomeAlimento: nome,
-    quantidade: calorias,
+    quantidade: quantidade,
+    validade: validade,
   });
 
   const editarAlimento = () => {
