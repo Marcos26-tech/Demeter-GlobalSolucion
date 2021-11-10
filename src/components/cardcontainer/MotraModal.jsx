@@ -23,34 +23,33 @@ function MostraModal(props) {
 
   let id = props.id;
   let nome = props.nome;
-  let calorias = props.calorias;
-  let receita = props.receita;
+  let quantidade = props.quantidade;
+  let validade = props.validade;
 
-  const [novaReceita, setReceita] = useState({
-    nomePrato: nome,
-    kcal: calorias,
-    receita: receita,
+  const [novoalimento, setAlimento] = useState({
+    nomeAlimento: nome,
+    quantidade: calorias,
   });
 
-  const editarReceita = () => {
+  const editarAlimento = () => {
     fetch("/rest/menu/" + id, {
       method: "put",
       headers: {
         "Content-Type": "application/json",
       },
 
-      body: JSON.stringify(novaReceita),
+      body: JSON.stringify(novoalimento),
     }).then(() => {
-      alert("Receita editada com sucesso!");
+      alert("Alimento editada com sucesso!");
       sairModal();
     });
   };
 
   const digitacao = (e) => {
-    setReceita({ ...novaReceita, [e.target.name]: e.target.value });
+    setAlimento({ ...novoalimento, [e.target.name]: e.target.value });
   };
 
-  useEffect(() => {}, [novaReceita]);
+  useEffect(() => {}, [novoalimento]);
 
   return (
     <>
@@ -59,7 +58,7 @@ function MostraModal(props) {
           <ModalContent2021>
             <ModalHeader>
               <Span>
-                <h3>Editação das Receitas Panaceia Delicious</h3>
+                <h3>Editação do estoque dos Alimentos</h3>
               </Span>
             </ModalHeader>
 
@@ -69,25 +68,25 @@ function MostraModal(props) {
                   <StyledQuestionario>
                     <input
                       type="text"
-                      name="nomePrato"
+                      name="nomeAlimenbto"
                       onChange={digitacao}
-                      placeholder="Edite o título da Receita"
+                      placeholder="Edite o nome do alimento"
                     />
                   </StyledQuestionario>
                   <StyledQuestionario>
                     <input
                       type="number"
-                      name="kcal"
+                      name="quantidade"
                       onChange={digitacao}
-                      placeholder="Edite a quantidade de calorias desta receita"
+                      placeholder="Edite a quantidade disponivel deste alimento"
                     />
                   </StyledQuestionario>
                   <StyledQuestionario>
-                    <textarea
-                      name="receita"
+                    <input
+                      type="data"
+                      name="validade"
                       onChange={digitacao}
-                      rows="4"
-                      placeholder="Edite a receita aqui..."
+                      placeholder="Edite a data de validade do alimento"
                     />
                   </StyledQuestionario>
                 </Section>
@@ -95,7 +94,7 @@ function MostraModal(props) {
 
               <ModalFooter>
                 <FormButton3 onClick={() => sairModal()}>Sair</FormButton3>
-                <FormButton2 onClick={() => editarReceita()}>
+                <FormButton2 onClick={() => editarAlimento()}>
                   salvar
                 </FormButton2>
               </ModalFooter>

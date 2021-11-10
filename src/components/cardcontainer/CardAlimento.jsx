@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Produto = styled.div`
-  background-color: wheat;
+  background-color: #575454cf;
   border-radius: 10px;
   width: 30%;
   padding: 1.4rem;
@@ -45,30 +45,20 @@ export const Button = styled.button`
   }
 `;
 
-const votar = (id) => {
-  fetch("/rest/menu/votar/" + id, {
-    method: "put",
-  }).then(() => (
-    alert("Voto computado com sucesso!")
-  )).catch((error) => {
-    console.log(error);
-  });
-};
 
-const CardReceita = (props) => {
+const CardAlimento = (props) => {
   return (
     <Produto>
       <div>
         <img src={props.foto} alt={props.nome} />
-        <Button onClick={() => votar(props.id)}>Votar</Button>
         <h3>{props.nome}</h3>
         <p>
-          <em>{props.calorias} kcal</em>
+          <em>{props.quantidade} Quantidade disponivel</em>
         </p>
-        <p>{props.receita}</p>
+        <p>{props.validade}</p>
       </div>
     </Produto>
   );
 };
 
-export default CardReceita;
+export default CardAlimento;

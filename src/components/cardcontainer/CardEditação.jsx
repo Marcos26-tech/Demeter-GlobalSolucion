@@ -1,10 +1,10 @@
 import { React, useState } from "react";
 import styled from "styled-components";
 import Modal from "./MotraModal";
-import { Button } from "./CardReceita";
+import { Button } from "./CardAlimento";
 
 const Produto = styled.div`
-  background-color: wheat;
+  background-color: #575454cf;
   border-radius: 10px;
   width: 30%;
   padding: 1.4rem;
@@ -36,18 +36,18 @@ const CardEditacao = (props) => {
           <Button onClick={() => showModal()}>Editar</Button>
           <h3>{props.nome}</h3>
           <p>
-            <em>{props.calorias} kcal</em>
+            <em>{props.quantidade} Quantidade disponivel</em>
           </p>
-          <p>{props.receita}</p>
+          <p>{props.validade}</p>
         </div>
       </Produto>
 
       {show && (
         <Modal
           id={props.id}
-          nome={props.nomePrato}
-          calorias={props.kcal}
-          receita={props.receita}
+          nome={props.nomeAlimento}
+          calorias={props.quantidade}
+          alimento={props.validade}
         ></Modal>
       )}
     </>

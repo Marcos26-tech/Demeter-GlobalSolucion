@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Produto = styled.div`
-  background-color: wheat;
+  background-color: #575454cf;
   border-radius: 10px;
   width: 30%;
   padding: 5rem;
