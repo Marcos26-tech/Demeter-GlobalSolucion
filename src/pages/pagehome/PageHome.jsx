@@ -80,10 +80,7 @@ function PageHome() {
         <div>
           <h2>Como funciona?</h2>
           <h3>
-            Deméter nasceu com a finalidade é reduzir a distância entre a comida
-            abundante que seria desperdiçada e aqueles que a necessitam e,
-            infelizmente, não tem acesso a ela, sobretudo pela condição
-            socioeconômica.
+           pode ser uma img ilustrando o caminho que o usuário segue até chegar ao objetivo. em construção
           </h3>
         </div>
       </Section>
@@ -92,7 +89,7 @@ function PageHome() {
           <h2>Rank dos doadores que abraçaram a causa</h2>
           <h3>
             Afinal todos são bem vindos a contribuir com a nossa causa seja você
-            tambem um doador.
+            tambem um doador. em construção
           </h3>
         </div>
       </Section>
