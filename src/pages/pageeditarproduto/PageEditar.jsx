@@ -11,6 +11,12 @@ const images = {
     1: alimento_1,
 };
 
+// let id = "";
+
+//   if (props.match.path.toLowerCase().includes("depo")) {
+//     id = props.match.params.id;
+//   }
+
 function PageEditar() {
   const [alimentos, setAlimentos] = useState([]);
 
@@ -38,7 +44,7 @@ function PageEditar() {
             <CardEditacao
               key={alimento.id}
               id={alimento.id}
-              foto={images[alimento.id]}
+              foto={images[1]}
               nome={alimento.nomeAlimento}
               calorias={alimento.quantidade}
               alimento={alimento.validade}

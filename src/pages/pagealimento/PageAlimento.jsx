@@ -39,7 +39,7 @@ const PageAlimento = () => {
             <CardHome
               key={alimento.id}
               id={alimento.id}
-              foto={images[alimento.id]}
+              foto={images[1]}
               nome={alimento.nomeAlimento}
               calorias={alimento.quantidade}
               validade={alimento.validade}>

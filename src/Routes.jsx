@@ -21,6 +21,14 @@ function Routes() {
         <Route path="/editar" component={editaralimento} />
         <Route path="/PageCadastroAlimento" component={cadastroalimento} />
         <Route path="/alimento" component={alimento} />
+
+
+        {/* <Route path="/estoque" component={estoque} />
+        <Route path="/estoque/:idUsuario" component={estoqueEspecifico} />
+        <Link to={`estoque/${idUsuario}`}></Link>
+        <Route path="/reserva" component={reserva} />
+        <Link to={reserva}></Link> */}
+        
       </Switch>
     </>
   );
