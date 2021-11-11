@@ -31,11 +31,10 @@ const CardHome = (props) => {
       <div>
         <img src={props.foto} alt={props.nome} />
         <h3>{props.nome}</h3>
-        <h5>Nº de votos: {props.voto}</h5>
         <p>
-          <em>{props.calorias} kcal</em>
+          <em>{props.quantidade} </em>
         </p>
-        <p>{props.receita}</p>
+        <p>{props.validade}</p>
       </div>
     </Produto>
   );

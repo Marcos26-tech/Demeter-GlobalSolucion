@@ -46,7 +46,7 @@ const CardEditacao = (props) => {
         <Modal
           id={props.id}
           nome={props.nomeAlimento}
-          calorias={props.quantidade}
+          quantidade={props.quantidade}
           alimento={props.validade}
         ></Modal>
       )}

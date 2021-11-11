@@ -48,7 +48,7 @@ function Registro() {
       },
       body: JSON.stringify(user),
     }).then(() => {
-      window.location = "/pagecadastroalimento";
+      window.location = "/cadastroalimento";
     });
 
     if (saveDataForm) {
@@ -116,7 +116,7 @@ function Registro() {
     if (user.nome && user.email && user.senha && user.senha.length > 6) {
       return (
         (document.getElementById("form").style.visibility = "hidden"),
-        window.location.replace("/PageCadastroAlimento")
+        window.location.replace("/cadastroalimento")
       );
     }
   }

@@ -9,11 +9,13 @@ const images = {
   1: alimento_1,
 };
 
+
+
 const PageAlimento = () => {
   const [alimentos, setalimentos] = useState([]);
 
   useEffect(() => {
-    fetch("/rest/estoque")
+    fetch("/rest/estoque/2")
       .then((resp) => {
         return resp.json();
       })
@@ -39,7 +41,7 @@ const PageAlimento = () => {
               id={alimento.id}
               foto={images[alimento.id]}
               nome={alimento.nomeAlimento}
-              calorias={alimento.quantidade}
+              quantidade={alimento.quantidade}
               validade={alimento.validade}>
             </CardHome>
           ))}
