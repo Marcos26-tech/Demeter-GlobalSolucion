@@ -60,7 +60,8 @@ function PageHome() {
       </Section>
       <Section>
         <div>
-          <iframe
+          
+          <iframe title='gif'
             src="https://giphy.com/embed/gi7h31nLA9c6DVxpyn"
             width="200"
             height="150"

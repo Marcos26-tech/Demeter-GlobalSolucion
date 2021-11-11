@@ -19,7 +19,7 @@ function Routes() {
         <Route path="/cadastro" component={cadastro} />
         <Route path="/forgetPassword" component={forgetPassword} />
         <Route path="/editar" component={editaralimento} />
-        <Route path="/PageCadastroAlimento" component={cadastroalimento} />
+        <Route path="/cadastroalimento" component={cadastroalimento} />
         <Route path="/alimento" component={alimento} />
       </Switch>
     </>

@@ -13,7 +13,7 @@ const PageAlimento = () => {
   const [alimentos, setalimentos] = useState([]);
 
   useEffect(() => {
-    fetch("/rest/menu/todos")
+    fetch("/rest/estoque")
       .then((resp) => {
         return resp.json();
       })

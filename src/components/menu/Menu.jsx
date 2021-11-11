@@ -61,7 +61,7 @@ const Menu = () => {
 
           <li>
              {isLogado ? ( 
-            <Link to="/PageCadastroAlimento">Cadastrar alimentos</Link>
+            <Link to="/cadastroalimento">Cadastrar alimentos</Link>
              ) : (
               <Link to="/login">Login</Link>
             )} 

@@ -13,7 +13,7 @@ function PageEditar() {
   const [alimentos, setAlimentos] = useState([]);
 
   useEffect(() => {
-    fetch("/rest/menu/")
+    fetch("/rest/editar")
       .then((resp) => {
         return resp.json();
       })

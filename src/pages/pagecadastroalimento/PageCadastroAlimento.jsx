@@ -17,7 +17,7 @@ function PageCadastroAlimento() {
 
   const adicionarAlimento = (e) => {
     e.preventDefault();
-    fetch("/rest/menu/", {
+    fetch("/rest/cadastrar", {
       method: "post",
 
       headers: {
