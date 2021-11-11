@@ -10,7 +10,6 @@ const images = {
 };
 
 
-
 const PageAlimento = () => {
   const [alimentos, setalimentos] = useState([]);
 
@@ -35,21 +34,24 @@ const PageAlimento = () => {
         </H>
 
         <CardContainer>
-          {alimentos.map((alimento) => (
-            <CardHome
+          {alimentos.map((alimento) => {
+            const [ano, mes, dia] = alimento.dataValidadeAlimento.split('-');
+            const dataFormatada = `${dia}/${mes}/${ano}`;
+
+            return (<CardHome
               key={alimento.id}
               id={alimento.id}
               foto={images[alimento.id]}
               nome={alimento.nomeAlimento}
-              quantidade={alimento.quantidade}
-              validade={alimento.validade}>
-            </CardHome>
-          ))}
+              quantidade={alimento.quantidadeAlimento}
+              validade={dataFormatada}
+            ></CardHome>);
+          })}
         </CardContainer>
-
       </DivHome>
     </>
   );
 };
+
 
 export default PageAlimento;

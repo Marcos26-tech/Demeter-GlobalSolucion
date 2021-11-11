@@ -32,7 +32,7 @@ const CardHome = (props) => {
         <img src={props.foto} alt={props.nome} />
         <h3>{props.nome}</h3>
         <p>
-          <em>{props.quantidade} </em>
+          <em>{props.quantidade} quantidade </em>
         </p>
         <p>{props.validade}</p>
       </div>
