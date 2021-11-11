@@ -29,7 +29,7 @@ const PageAlimento = () => {
     <>
       <DivHome>
         <H>
-          <Span>As alimentos disponiveis para doação</Span>
+          <Span>Os alimentos disponíveis para doação</Span>
         </H>
 
         <CardContainer>
