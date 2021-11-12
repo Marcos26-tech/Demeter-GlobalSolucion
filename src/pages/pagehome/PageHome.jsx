@@ -6,7 +6,6 @@ import sol from "../video/sol.mp4";
 
 const MainAreaStyled = styled.div`
   width: 100%;
-  height: 85vh;  
   position: relative;
   overflow: hidden;
     .overlay{
@@ -26,6 +25,8 @@ const MainAreaStyled = styled.div`
       z-index: -100;
       min-width: 100%;
       min-height:100%;
+      object-fit: cover;
+      opacity: 0.7;
     }
 `;
 
