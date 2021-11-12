@@ -29,13 +29,9 @@ export const InnerLayout = styled.div`
 `;
 
 function PageHome(props) {
-  
   let tipoUsuario = null
-  
   if (props.match.path.toLowerCase().includes('home')) {
-    alert("Passei pelo if...")
-    alert(props.match.params.id)
-    tipoUsuario = props.match.params.id
+  tipoUsuario = props.match.params.id
 }
   const mostraTudo = () => {
     alert(tipoUsuario)

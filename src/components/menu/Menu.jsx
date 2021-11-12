@@ -41,8 +41,6 @@ const StyledMenu = styled.nav`
 const Menu = () => {
   let isLogado = window.localStorage.getItem("isLogado");
 
-  let isentididade = window.localStorage.getItem("isentididade");
-
   return (
     <>
       <StyledMenu>
@@ -52,7 +50,7 @@ const Menu = () => {
           </li>
 
           <li>
-             {isLogado ? ( 
+             {isLogado === "entidade" ? ( 
             <Link to="/alimento">Alimentos para doação</Link>
              ) : (
               <Link to="/"></Link>
@@ -60,7 +58,7 @@ const Menu = () => {
           </li>
 
           <li>
-             {isLogado ? ( 
+             {isLogado === "supermercado" ? ( 
             <Link to="/cadastroalimento">Cadastrar alimentos</Link>
              ) : (
               <Link to="/login">Login</Link>
@@ -68,7 +66,7 @@ const Menu = () => {
           </li>
 
           <li>
-             {isLogado ? ( 
+             {isLogado === "supermercado" ? ( 
             <Link to="/editar">Estoque de alimentos</Link>
             ) : (
               <Link to="/cadastro">Cadastre-se</Link>

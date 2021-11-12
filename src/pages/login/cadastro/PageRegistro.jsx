@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState} from "react";
 import {
   Section,
   Form,
@@ -35,11 +34,7 @@ function Registro() {
   //Enviar os dados para o back-end
   const addUser = async (e) => {
     e.preventDefault();
-
     if (!validate()) return;
-
-    const saveDataForm = true;
-
     fetch("/rest/usuario/cadastro", {
       method: "post",
       headers: {
@@ -47,11 +42,12 @@ function Registro() {
       },
       body: JSON.stringify(user),
     }).then((response) => {
-      if (response.status === 200) {
+      if (response.status === 201) {
         setStatus({
           type: "success",
           mensagem: "Usuário cadastrado com sucesso!",
         });
+        window.location.replace(`/home/${user.tipoUsuario}`);
       } else {
         setStatus({
           type: "error",
@@ -60,30 +56,13 @@ function Registro() {
       }
     });
 
-    if (saveDataForm) {
-      setStatus({
-        type: "success",
-        mensagem: "Usuário cadastrado com sucesso Bem vindo",
-      });
-      setUser({
-        name: "",
-        email: "",
-        password: "",
-      });
-    } else {
-      setStatus({
-        type: "error",
-        mensagem: "Erro: Usuário não cadastrado!",
-      });
-    }
-
   };
 
   function validate() {
     if (!user.razaoSocial)
       return setStatus({
         type: "error",
-        mensagem: "Erro: Necessário preencher o campo nome!",
+        mensagem: "Erro: Necessário preencher o campo razão Social!",
       });
     if (!user.emailUusario)
       return setStatus({
@@ -100,15 +79,41 @@ function Registro() {
         type: "error",
         mensagem: "Erro: A senha precisa ter pelo menos seis caracteres!",
       });
-
+    if (!user.tipoUsuario)
+      return setStatus({
+        type: "error",
+        mensagem: "Erro: Necessário preencher o campo tipo de usuário!",
+      });
+    if (!user.regiaoUsuario)
+      return setStatus({
+        type: "error",
+        mensagem: "Erro: Necessário preencher o campo região!",
+      });
+    if (!user.cnpjUsuario)
+      return setStatus({
+        type: "error",
+        mensagem: "Erro: Necessário preencher o campo CNPJ!",
+      });
+    if (user.cnpjUsuario.length < 14)
+      return setStatus({
+        type: "error",
+        mensagem: "Erro: O CNPJ precisa ter 14 caracteres!",
+      });
     return true;
-  }
+  }  
+
+  const isLogado = JSON.parse(localStorage.getItem("isLogado") || "[]");
 
   function someCadastrar() {
     console.log(user);
-    if (user.razaoSocial && user.emailUusario && user.senhaUsuario && user.senhaUsuario.length > 6) {
+    if (user.razaoSocial && user.emailUusario && user.senhaUsuario && user.senhaUsuario.length > 6 && user.tipoUsuario && user.regiaoUsuario && user.cnpjUsuario && user.cnpjUsuario.length > 14) {
       return (
-        (document.getElementById("form").style.visibility = "hidden")
+        (document.getElementById("form").style.visibility = "hidden"),
+        isLogado.push({
+          logado: true,
+          tipoUsuario: user.tipoUsuario,
+        }),
+        localStorage.setItem("isLogado", JSON.stringify(isLogado))
       );
     }
   }
@@ -206,11 +211,6 @@ function Registro() {
                 Cadastrar
               </FormButton>
             </FormFieldset>
-            
-            {/* EXEMPLO DE COMO PASSAR UM ATRIBUTO DO OBJETO PARA OUTRA PAGINA */}
-            <div><Link title="home" to={`/home/${user.tipoUsuario}`}> Cadastrar e Redirecionar o usuário para uma home personalizada!</Link></div>
-            {/* ////////////////////////////////// */}
-
           </Form>
         </FormBody>
         <Forml>
