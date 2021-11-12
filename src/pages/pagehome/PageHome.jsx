@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PageHomeCont  from "./PageHomeCont";
 import sol from "../video/sol.mp4";
 
+
 const MainAreaStyled = styled.div`
   width: 100%;
   height: 85vh;  
@@ -19,8 +20,12 @@ const MainAreaStyled = styled.div`
     video{
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      opacity: 0.7;
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      z-index: -100;
+      min-width: 100%;
+      min-height:100%;
     }
 `;
 
