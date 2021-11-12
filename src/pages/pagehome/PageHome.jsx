@@ -44,6 +44,7 @@ function PageHome(props) {
   return (
     <>
     <Link title="estoque" to="/estoque">Desejo ir para o estoque</Link>
+    <Link title="alimentos" to="/alimentos">Quero ver alimentos</Link>
       <MainAreaStyled>
       <video src={sol} muted playsInline autoPlay loop></video>
       <InnerLayout>

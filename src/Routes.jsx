@@ -9,6 +9,7 @@ import cadastroalimento from "./pages/pagecadastroalimento/PageCadastroAlimento"
 import alimento from "./pages/pagealimento/PageAlimento"
 import mercado from "./pages/pagemercado/PageMercado"
 import estoque from './pages/pageestoque/PageEstoque'
+import PageAlimentos from "./pages/pagealimentos/PageAlimentos";
 
 function Routes() {
   return (
@@ -25,6 +26,7 @@ function Routes() {
         <Route path="/alimento" component={alimento} />
         <Route path="/selecionamercado" component={mercado} />
         <Route path="/estoque" component={estoque} />
+        <Route path="/alimentos" component={PageAlimentos} />
       </Switch>
     </>
   );
