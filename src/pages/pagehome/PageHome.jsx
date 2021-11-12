@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PageHomeCont  from "./PageHomeCont";
 import sol from "../video/sol.mp4";
-
+import { Link } from "react-router-dom";
 
 const MainAreaStyled = styled.div`
   width: 100%;
@@ -34,20 +34,15 @@ export const InnerLayout = styled.div`
   padding: 0px;
 `;
 
-function PageHome() {
-
-    {/*let tipoUsuario = null
-    if (props.match.path.toLowerCase().includes('home')) {
-    tipoUsuario = props.match.params.id
-  }
-    const mostraTudo = () => {
-      alert(tipoUsuario)
-      console.log(tipoUsuario)
-    }
-  <button onClick={mostraTudo}>Vamos validar se essa joça vai funcionar mesmo...</button>*/}
-
+function PageHome(props) {
+  let tipoUsuario = null
+  if (props.match.path.toLowerCase().includes('home')) {
+  tipoUsuario = props.match.params.id
+}
   return (
     <>
+    <Link title="estoque" to="/estoque">Desejo ir para o estoque</Link>
+    <Link title="alimentos" to="/alimentos">Quero ver alimentos</Link>
       <MainAreaStyled>
       <video src={sol} muted playsInline autoPlay loop time="5000"></video>
       <InnerLayout>
@@ -58,4 +53,4 @@ function PageHome() {
   );
 }
 
-export default PageHome;
+export default PageHome

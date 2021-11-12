@@ -8,6 +8,8 @@ import editaralimento from "./pages/pageeditarproduto/PageEditar"
 import cadastroalimento from "./pages/pagecadastroalimento/PageCadastroAlimento"
 import alimento from "./pages/pagealimento/PageAlimento"
 import mercado from "./pages/pagemercado/PageMercado"
+import estoque from './pages/pageestoque/PageEstoque'
+import PageAlimentos from "./pages/pagealimentos/PageAlimentos";
 import sobrenos from "./pages/pagesobrenos/PageSobreNos"
 
 
@@ -25,7 +27,8 @@ function Routes() {
         <Route path="/cadastroalimento" component={cadastroalimento} />
         <Route path="/alimento" component={alimento} />
         <Route path="/selecionamercado" component={mercado} />
-        <Route path="/sobrenos" component={sobrenos} />
+        <Route path="/estoque" component={estoque} />
+        <Route path="/alimentos" component={PageAlimentos} />
       </Switch>
     </>
   );
