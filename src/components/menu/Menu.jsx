@@ -24,7 +24,7 @@ const StyledMenu = styled.nav`
 
   a {
     font-weight: bold;
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
   }
@@ -39,7 +39,8 @@ const StyledMenu = styled.nav`
 `;
 
 const Menu = () => {
-  let isLogado = window.localStorage.getItem("isLogado");
+  
+  let ListaUser = window.localStorage.getItem("listaUser");
 
   return (
     <>
@@ -50,15 +51,15 @@ const Menu = () => {
           </li>
 
           <li>
-             {isLogado === "entidade" ? ( 
-            <Link to="/alimento">Alimentos para doação</Link>
+             {ListaUser  ? ( 
+            <Link to="/selecionamercado">Alimentos para doação</Link>
              ) : (
               <Link to="/"></Link>
             )} 
           </li>
 
           <li>
-             {isLogado === "supermercado" ? ( 
+             {ListaUser? ( 
             <Link to="/cadastroalimento">Cadastrar alimentos</Link>
              ) : (
               <Link to="/login">Login</Link>
@@ -66,7 +67,7 @@ const Menu = () => {
           </li>
 
           <li>
-             {isLogado === "supermercado" ? ( 
+             {ListaUser ? ( 
             <Link to="/editar">Estoque de alimentos</Link>
             ) : (
               <Link to="/cadastro">Cadastre-se</Link>

@@ -69,17 +69,19 @@ function FormLogin() {
     return true;
   }
 
-  const isLogado = JSON.parse(localStorage.getItem("isLogado") || "[]");
+  const listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]");
 
   function someLogin() {
     if (user.email && user.password && user.password.length >= 6) {
       return (
         (document.getElementById("form").style.visibility = "hidden"),
-        window.location.replace("/editar"),
-        isLogado.push({
+        window.location.replace("/home"),
+        listaUser.push({
           logado: true,
+          email: user.email,
+          password: user.password,
         }),
-        localStorage.setItem("isLogado", JSON.stringify(isLogado))
+        localStorage.setItem("listaUser", JSON.stringify(listaUser))
       );
     }
   }

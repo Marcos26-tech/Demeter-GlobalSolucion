@@ -9,6 +9,7 @@ const Section = styled.section`
   margin: 0;
   padding: 2em;
   align-items: center;
+  color: #000000;
 `;
 
 const Div = styled.div`
@@ -73,7 +74,7 @@ function PageHomeCont() {
             Deméter nasceu com a finalidade é reduzir a distância entre a comida
             abundante que seria desperdiçada e aqueles que a necessitam e
             infelizmente, não tem acesso a ela, sobretudo pela condição
-            socioeconômica.
+            socioeconômica.<a href="/sobrenos">saiba mais</a>
           </h3>
         </div>
       </Section>

@@ -26,7 +26,7 @@ const MainAreaStyled = styled.div`
       min-width: 100%;
       min-height:100%;
       object-fit: cover;
-      opacity: 0.7;
+      opacity: 0.3;
     }
 `;
 
@@ -39,14 +39,12 @@ function PageHome(props) {
   if (props.match.path.toLowerCase().includes('home')) {
   tipoUsuario = props.match.params.id
 }
-
-
   return (
     <>
     <Link title="estoque" to="/estoque">Desejo ir para o estoque</Link>
     <Link title="alimentos" to="/alimentos">Quero ver alimentos</Link>
       <MainAreaStyled>
-      <video src={sol} muted playsInline autoPlay loop></video>
+      <video src={sol} muted playsInline autoPlay loop time="5000"></video>
       <InnerLayout>
           <PageHomeCont />
       </InnerLayout>
@@ -55,4 +53,4 @@ function PageHome(props) {
   );
 }
 
-export default PageHome;
+export default PageHome

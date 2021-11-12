@@ -10,6 +10,8 @@ import alimento from "./pages/pagealimento/PageAlimento"
 import mercado from "./pages/pagemercado/PageMercado"
 import estoque from './pages/pageestoque/PageEstoque'
 import PageAlimentos from "./pages/pagealimentos/PageAlimentos";
+import sobrenos from "./pages/pagesobrenos/PageSobreNos"
+
 
 function Routes() {
   return (
