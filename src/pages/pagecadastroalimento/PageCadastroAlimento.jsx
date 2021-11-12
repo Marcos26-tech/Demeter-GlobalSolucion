@@ -8,11 +8,18 @@ import {
   Divi,
 } from "../../assets/style/StyleCadastroAlimento";
 
+// let id = "";
+
+//   if (props.match.path.toLowerCase().includes("depo")) {
+//     id = props.match.params.id;
+//   }
+
+
 function PageCadastroAlimento() {
   const [novoAlimento, setReceita] = useState({
     nomeAlimento: "",
-    quantidade: "",
-    validade: "",
+    quantidadeAlimento: "",
+    dataValidadeAlimento: "",
   });
 
   const adicionarAlimento = (e) => {

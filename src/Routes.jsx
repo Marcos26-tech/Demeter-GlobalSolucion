@@ -16,6 +16,7 @@ function Routes() {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/home" component={Home} />
+        <Route path="/home/:id" component={Home} />
         <Route path="/login" component={login} />
         <Route path="/cadastro" component={cadastro} />
         <Route path="/forgetPassword" component={forgetPassword} />

@@ -41,7 +41,7 @@ const PageAlimento = () => {
             return (<CardHome
               key={alimento.id}
               id={alimento.id}
-              foto={images[alimento.id]}
+              foto={images[1]}
               nome={alimento.nomeAlimento}
               quantidade={alimento.quantidadeAlimento}
               validade={dataFormatada}
