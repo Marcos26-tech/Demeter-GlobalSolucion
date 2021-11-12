@@ -28,9 +28,24 @@ export const InnerLayout = styled.div`
   padding: 0px;
 `;
 
-function PageHome() {
+function PageHome(props) {
+  
+  let tipoUsuario = null
+  
+  if (props.match.path.toLowerCase().includes('home')) {
+    alert("Passei pelo if...")
+    alert(props.match.params.id)
+    tipoUsuario = props.match.params.id
+}
+  const mostraTudo = () => {
+    alert(tipoUsuario)
+    console.log(tipoUsuario)
+  }
+
+
   return (
     <>
+    <button onClick={mostraTudo}>Vamos validar se essa joça vai funcionar mesmo...</button>
       <MainAreaStyled>
       <video src={sol} muted playsInline autoPlay loop></video>
       <InnerLayout>

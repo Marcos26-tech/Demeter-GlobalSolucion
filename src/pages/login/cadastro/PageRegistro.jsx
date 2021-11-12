@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   Section,
   Form,
@@ -205,6 +206,11 @@ function Registro() {
                 Cadastrar
               </FormButton>
             </FormFieldset>
+            
+            {/* EXEMPLO DE COMO PASSAR UM ATRIBUTO DO OBJETO PARA OUTRA PAGINA */}
+            <div><Link title="home" to={`/home/${user.tipoUsuario}`}> Cadastrar e Redirecionar o usuário para uma home personalizada!</Link></div>
+            {/* ////////////////////////////////// */}
+
           </Form>
         </FormBody>
         <Forml>
