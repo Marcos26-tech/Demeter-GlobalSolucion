@@ -133,7 +133,7 @@ function Registro() {
 
           <Form onSubmit={addUser} id="form">
             <label>
-              <input type="radio" name="tipoUsuario" value="supermercado" onChange={valueInput}/>
+              <input type="radio" name="tipoUsuario" value="supermercado" onChange={valueInput} />
               SuperMercado
             </label>
             <label>
@@ -164,15 +164,15 @@ function Registro() {
             </FormFieldset>
 
             <FormFieldset>
-              <select>
-                <optgroup label="Localização" name="regiaoUsuario">
+              <select name="regiaoUsuario" onChange={valueInput}>
+                <optgroup label="Localização">
                   <option disabled selected>
                     Selecione sua região
                   </option>
-                  <option value="norte" onChange={valueInput}>Zona Norte</option>
-                  <option value="sul" onChange={valueInput}>Zona Sul</option>
-                  <option value="leste" onChange={valueInput}>Zona Leste</option>
-                  <option value="oeste" onChange={valueInput}>Zona Oeste</option>
+                  <option value="norte">Zona Norte</option>
+                  <option value="sul" >Zona Sul</option>
+                  <option value="leste">Zona Leste</option>
+                  <option value="oeste">Zona Oeste</option>
                 </optgroup>
               </select>
             </FormFieldset>
@@ -210,9 +210,9 @@ function Registro() {
         <Forml>
           <FormLink href="./login">Já tem conta Clique aqui!</FormLink>
         </Forml>
-        
+
       </FormWrapper>
-      
+
     </Section>
   );
 }
