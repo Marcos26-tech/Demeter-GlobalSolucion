@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import {
   Section,
   Form,
@@ -47,7 +47,7 @@ function Registro() {
           type: "success",
           mensagem: "Usuário cadastrado com sucesso!",
         });
-        window.location.replace(`/home/${user.tipoUsuario}`);
+        window.location.replace(`/login/${user.tipoUsuario}`);
       } else {
         setStatus({
           type: "error",
@@ -55,7 +55,9 @@ function Registro() {
         });
       }
     });
-
+    const listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]");
+    listaUser.push(user);
+    localStorage.setItem("listaUser", JSON.stringify(listaUser));
   };
 
   function validate() {
@@ -100,21 +102,22 @@ function Registro() {
         mensagem: "Erro: O CNPJ precisa ter 14 caracteres!",
       });
     return true;
-  }  
-
-  const isLogado = JSON.parse(localStorage.getItem("isLogado") || "[]");
+  }
 
   function someCadastrar() {
-    console.log(user);
-    if (user.razaoSocial && user.emailUusario && user.senhaUsuario && user.senhaUsuario.length > 6 && user.tipoUsuario && user.regiaoUsuario && user.cnpjUsuario && user.cnpjUsuario.length > 14) {
+    if (
+      user.razaoSocial &&
+      user.emailUusario &&
+      user.senhaUsuario &&
+      user.senhaUsuario.length > 6 &&
+      user.tipoUsuario &&
+      user.regiaoUsuario &&
+      user.cnpjUsuario &&
+      user.cnpjUsuario.length > 14
+    ){
       return (
-        (document.getElementById("form").style.visibility = "hidden"),
-        isLogado.push({
-          logado: true,
-          tipoUsuario: user.tipoUsuario,
-        }),
-        localStorage.setItem("isLogado", JSON.stringify(isLogado))
-      );
+        (document.getElementById("form").style.visibility = "hidden")
+      )
     }
   }
 
@@ -139,11 +142,21 @@ function Registro() {
 
           <Form onSubmit={addUser} id="form">
             <label>
-              <input type="radio" name="tipoUsuario" value="supermercado" onChange={valueInput} />
+              <input
+                type="radio"
+                name="tipoUsuario"
+                value="supermercado"
+                onChange={valueInput}
+              />
               SuperMercado
             </label>
             <label>
-              <input type="radio" name="tipoUsuario" value="entidade" onChange={valueInput} />
+              <input
+                type="radio"
+                name="tipoUsuario"
+                value="entidade"
+                onChange={valueInput}
+              />
               Entidade Assistêncial
             </label>
 
@@ -176,7 +189,7 @@ function Registro() {
                     Selecione sua região
                   </option>
                   <option value="norte">Zona Norte</option>
-                  <option value="sul" >Zona Sul</option>
+                  <option value="sul">Zona Sul</option>
                   <option value="leste">Zona Leste</option>
                   <option value="oeste">Zona Oeste</option>
                 </optgroup>
@@ -216,9 +229,7 @@ function Registro() {
         <Forml>
           <FormLink href="./login">Já tem conta Clique aqui!</FormLink>
         </Forml>
-
       </FormWrapper>
-
     </Section>
   );
 }

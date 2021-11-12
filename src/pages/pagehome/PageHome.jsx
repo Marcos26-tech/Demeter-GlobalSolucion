@@ -26,7 +26,7 @@ const MainAreaStyled = styled.div`
       min-width: 100%;
       min-height:100%;
       object-fit: cover;
-      opacity: 0.7;
+      opacity: 0.3;
     }
 `;
 
@@ -34,22 +34,22 @@ export const InnerLayout = styled.div`
   padding: 0px;
 `;
 
-function PageHome(props) {
-  let tipoUsuario = null
-  if (props.match.path.toLowerCase().includes('home')) {
-  tipoUsuario = props.match.params.id
-}
-  const mostraTudo = () => {
-    alert(tipoUsuario)
-    console.log(tipoUsuario)
-  }
+function PageHome() {
 
+    {/*let tipoUsuario = null
+    if (props.match.path.toLowerCase().includes('home')) {
+    tipoUsuario = props.match.params.id
+  }
+    const mostraTudo = () => {
+      alert(tipoUsuario)
+      console.log(tipoUsuario)
+    }
+  <button onClick={mostraTudo}>Vamos validar se essa joça vai funcionar mesmo...</button>*/}
 
   return (
     <>
-    <button onClick={mostraTudo}>Vamos validar se essa joça vai funcionar mesmo...</button>
       <MainAreaStyled>
-      <video src={sol} muted playsInline autoPlay loop></video>
+      <video src={sol} muted playsInline autoPlay loop time="5000"></video>
       <InnerLayout>
           <PageHomeCont />
       </InnerLayout>

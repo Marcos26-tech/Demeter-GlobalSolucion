@@ -3,7 +3,7 @@ import CardContainer from "../../components/cardcontainer/CardContainer";
 import CardMercado from "../../components/cardcontainer/CardMercado";
 import { DivHome, H, Span } from "../../assets/style/StyleGloblal";
 
-import mercado_1 from "../../assets/img/alimentos/mercado.gif";
+import mercado_1 from "../../assets/img/alimentos/mercado.gif";/*não ta funcionando o gif ainda*/
 
 const images = {mercado_1};
 
@@ -12,7 +12,7 @@ const PageMercado = () => {
   const [mercados, setmercados] = useState([]);
 
   useEffect(() => {
-    fetch("/rest/estoque/2")
+    fetch("/rest/reserva/2")
       .then((resp) => {
         return resp.json();
       })
@@ -23,12 +23,12 @@ const PageMercado = () => {
         console.log(error);
       });
   }, []);
-
   return (
     <>
       <DivHome>
         <H>
-          <Span>Selecione um dos SuperMercados abaixo disponíveis em sua região</Span>
+          <Span>Selecione um dos Supermercados abaixo disponíveis em sua região</Span>
+          <img src={images} alt="assd" />
         </H>
         <CardContainer>
           {mercados.map((mercado) => {
@@ -36,7 +36,7 @@ const PageMercado = () => {
             <CardMercado
               key={mercado.id}
               id={mercado.id}
-              foto={images[mercado_1]}
+              foto={images}/*não ta funcionando o gif ainda para o supermercado*/
               nome={mercado.nome}
             ></CardMercado>);
           })}

@@ -63,12 +63,11 @@ const selecionamercado = (id) => {
 const CardMercado = (props) => {
   return (
     <Produto>
-      <Button onClick={() => selecionamercado(props.id)}>
         <div>
           <img src={props.foto} alt={props.nome} />
           <h3>{props.nome}</h3>
         </div>
-      </Button>
+        <Button onClick={() => selecionamercado(props.id)}></Button>
     </Produto>
   );
 };
