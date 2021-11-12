@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PageHomeCont  from "./PageHomeCont";
 import sol from "../video/sol.mp4";
-
+import { Link } from "react-router-dom";
 
 const MainAreaStyled = styled.div`
   width: 100%;
@@ -39,15 +39,11 @@ function PageHome(props) {
   if (props.match.path.toLowerCase().includes('home')) {
   tipoUsuario = props.match.params.id
 }
-  const mostraTudo = () => {
-    alert(tipoUsuario)
-    console.log(tipoUsuario)
-  }
 
 
   return (
     <>
-    <button onClick={mostraTudo}>Vamos validar se essa joça vai funcionar mesmo...</button>
+    <Link title="estoque" to="/estoque">Desejo ir para o estoque</Link>
       <MainAreaStyled>
       <video src={sol} muted playsInline autoPlay loop></video>
       <InnerLayout>
