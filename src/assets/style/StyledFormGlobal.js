@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Section = styled.section`
   width: 100%;
-  height: 120%;
-  padding-top: 5rem;
+  height: 125%;
+  padding-top: 2rem;
   background-size: cover;
   position: relative;
   background-image: url("https://financialtribune.com/sites/default/files/field/image/17january/04-zs-pomegranates_204-ab.jpg");
@@ -13,7 +13,9 @@ export const Form = styled.form`
   width: 100%;
   height: 21rem;
   label {
-    color: rgb(223, 211, 211);
+    color: #070707;
+    font-size: 1rem;
+    font-weight: bold;
   }
 `;
 
@@ -25,7 +27,7 @@ export const FormWrapper = styled.div`
   padding: 0px 0 30px;
   margin: 0 auto 0;
   width: 500px;
-  height: 670px;
+  height: 700px;
   font-family: Quicksand, arial, sans-serif;
   border-radius: 5px;
   @media (max-width: 783px) {
@@ -40,8 +42,8 @@ export const FormHeader = styled.header`
   padding-top: 24px;
   padding-bottom: 19px;
   h2 {
-    color: #ff9052;
-    font-size: 22px;
+    color:  #f00909;
+    font-size: 25px;
     font-weight: bold;
     text-align: center;
   }
@@ -100,8 +102,8 @@ export const FormButton = styled.button`
   font-family: inherit;
   font-size: 14px;
   font-weight: 700;
-  color: rgb(255, 255, 255);
-  background-color: rgb(238, 49, 49);
+  color: #ffffff;
+  background-color: #ee3131;
   border: 0;
   border-radius: 35px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
@@ -115,14 +117,12 @@ export const FormButton = styled.button`
 `;
 
 export const FormLink = styled.a`
+  margin-top: 10rem;
   text-decoration: none;
-  margin: 10px 55px 0;
-  display: inline-block;
   font-size: 15px;
   color: rgb(223, 211, 211);
   cursor: pointer;
   transition: color 0.25s ease-in;
-
   &:hover {
     color: rgb(25, 121, 6);
   }
@@ -130,4 +130,11 @@ export const FormLink = styled.a`
     font-size: 13px;
     text-align: center;
   }
+`;
+
+export const Forml = styled.div`
+  margin-top: 11rem;
+  padding: 1rem;
+  text-align: center;
+
 `;

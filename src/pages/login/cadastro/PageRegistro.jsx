@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Section,
   Form,
@@ -9,16 +9,17 @@ import {
   FormInput,
   FormButton,
   FormLink,
+  Forml,
 } from "../../../assets/style/StyledFormGlobal";
 
 function Registro() {
-  let id = "";
-
   const [user, setUser] = useState({
-    id: id,
-    nome: "",
-    email: "",
-    senha: "",
+    cnpjUsuario: "",
+    razaoSocial: "",
+    emailUusario: "",
+    senhaUsuario: "",
+    tipoUsuario: "",
+    regiaoUsuario: "",
   });
 
   const [status, setStatus] = useState({
@@ -38,14 +39,24 @@ function Registro() {
 
     const saveDataForm = true;
 
-    fetch("/rest/user/" + id, {
+    fetch("/rest/usuario/cadastro", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(user),
-    }).then(() => {
-      window.location = "/home";
+    }).then((response) => {
+      if (response.status === 200) {
+        setStatus({
+          type: "success",
+          mensagem: "Usuário cadastrado com sucesso!",
+        });
+      } else {
+        setStatus({
+          type: "error",
+          mensagem: "Erro ao cadastrar usuário!",
+        });
+      }
     });
 
     if (saveDataForm) {
@@ -65,40 +76,25 @@ function Registro() {
       });
     }
 
-    const listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]");
-    const isLogado = JSON.parse(localStorage.getItem("isLogado") || "[]");
-
-    listaUser.push({
-      name: user.nome,
-      email: user.email,
-      password: user.senha,
-    });
-
-    isLogado.push({
-      logado: true,
-    });
-
-    localStorage.setItem("listaUser", JSON.stringify(listaUser));
-    localStorage.setItem("isLogado", JSON.stringify(isLogado));
   };
 
   function validate() {
-    if (!user.nome)
+    if (!user.razaoSocial)
       return setStatus({
         type: "error",
         mensagem: "Erro: Necessário preencher o campo nome!",
       });
-    if (!user.email)
+    if (!user.emailUusario)
       return setStatus({
         type: "error",
         mensagem: "Erro: Necessário preencher o campo e-mail!",
       });
-    if (!user.senha)
+    if (!user.senhaUsuario)
       return setStatus({
         type: "error",
         mensagem: "Erro: Necessário preencher o campo senha!",
       });
-    if (user.senha.length < 6)
+    if (user.senhaUsuario.length < 6)
       return setStatus({
         type: "error",
         mensagem: "Erro: A senha precisa ter pelo menos seis caracteres!",
@@ -108,10 +104,10 @@ function Registro() {
   }
 
   function someCadastrar() {
-    if (user.nome && user.email && user.senha && user.senha.length > 6) {
+    console.log(user);
+    if (user.razaoSocial && user.emailUusario && user.senhaUsuario && user.senhaUsuario.length > 6) {
       return (
-        (document.getElementById("form").style.visibility = "hidden"),
-        window.location.replace("/receita")
+        (document.getElementById("form").style.visibility = "hidden")
       );
     }
   }
@@ -137,11 +133,11 @@ function Registro() {
 
           <Form onSubmit={addUser} id="form">
             <label>
-              <input type="radio" class="question" name="1" value="supermercado" />
+              <input type="radio" name="tipoUsuario" value="supermercado" onChange={valueInput}/>
               SuperMercado
             </label>
             <label>
-              <input type="radio" class="question" name="1" value="entidade" />
+              <input type="radio" name="tipoUsuario" value="entidade" onChange={valueInput} />
               Entidade Assistêncial
             </label>
 
@@ -149,10 +145,10 @@ function Registro() {
               <label>Razão Social: </label>
               <FormInput
                 type="text"
-                name="nome"
+                name="razaoSocial"
                 placeholder="Nome completo da empresa"
                 onChange={valueInput}
-                value={user.nome}
+                value={user.razaoSocial}
               />
             </FormFieldset>
 
@@ -160,23 +156,23 @@ function Registro() {
               <label>CNPJ: </label>
               <FormInput
                 type="number"
-                name="cnpj"
+                name="cnpjUsuario"
                 placeholder="CNPJ da empresa"
                 onChange={valueInput}
-                value={user.nome}
+                value={user.cnpjUsuario}
               />
             </FormFieldset>
 
             <FormFieldset>
               <select>
-                <optgroup label="Localização">
+                <optgroup label="Localização" name="regiaoUsuario">
                   <option disabled selected>
                     Selecione sua região
                   </option>
-                  <option value="norte">Zona Norte</option>
-                  <option value="sul">Zona Sul</option>
-                  <option value="leste">Zona Leste</option>
-                  <option value="oeste">Zona Oeste</option>
+                  <option value="norte" onChange={valueInput}>Zona Norte</option>
+                  <option value="sul" onChange={valueInput}>Zona Sul</option>
+                  <option value="leste" onChange={valueInput}>Zona Leste</option>
+                  <option value="oeste" onChange={valueInput}>Zona Oeste</option>
                 </optgroup>
               </select>
             </FormFieldset>
@@ -185,10 +181,10 @@ function Registro() {
               <label>E-mail:</label>
               <FormInput
                 type="email"
-                name="email"
+                name="emailUusario"
                 placeholder="Melhor e-mail para cadastro"
                 onChange={valueInput}
-                value={user.email}
+                value={user.emailUusario}
               />
             </FormFieldset>
 
@@ -196,11 +192,11 @@ function Registro() {
               <label>Senha: </label>
               <FormInput
                 type="password"
-                name="senha"
+                name="senhaUsuario"
                 placeholder="Senha para acessar o site"
                 autoComplete="on"
                 onChange={valueInput}
-                value={user.senha}
+                value={user.senhaUsuario}
               />
             </FormFieldset>
 
@@ -210,12 +206,13 @@ function Registro() {
               </FormButton>
             </FormFieldset>
           </Form>
-
-          <FormFieldset>
-            <FormLink href="./login">Já tem conta Clique aqui!</FormLink>
-          </FormFieldset>
         </FormBody>
+        <Forml>
+          <FormLink href="./login">Já tem conta Clique aqui!</FormLink>
+        </Forml>
+        
       </FormWrapper>
+      
     </Section>
   );
 }

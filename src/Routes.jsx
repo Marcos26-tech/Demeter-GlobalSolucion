@@ -7,6 +7,7 @@ import forgetPassword from "./pages/login/setsenha/PageForgetPassword"
 import editaralimento from "./pages/pageeditarproduto/PageEditar"
 import cadastroalimento from "./pages/pagecadastroalimento/PageCadastroAlimento"
 import alimento from "./pages/pagealimento/PageAlimento"
+import mercado from "./pages/pagemercado/PageMercado"
 
 
 function Routes() {
@@ -19,16 +20,9 @@ function Routes() {
         <Route path="/cadastro" component={cadastro} />
         <Route path="/forgetPassword" component={forgetPassword} />
         <Route path="/editar" component={editaralimento} />
-        <Route path="/PageCadastroAlimento" component={cadastroalimento} />
+        <Route path="/cadastroalimento" component={cadastroalimento} />
         <Route path="/alimento" component={alimento} />
-
-
-        {/* <Route path="/estoque" component={estoque} />
-        <Route path="/estoque/:idUsuario" component={estoqueEspecifico} />
-        <Link to={`estoque/${idUsuario}`}></Link>
-        <Route path="/reserva" component={reserva} />
-        <Link to={reserva}></Link> */}
-        
+        <Route path="/selecionamercado" component={mercado} />
       </Switch>
     </>
   );

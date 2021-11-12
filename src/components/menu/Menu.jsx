@@ -52,8 +52,8 @@ const Menu = () => {
           </li>
 
           <li>
-             {isentididade ? ( 
-            <Link to="/alimentos">Alimentos para doação</Link>
+             {isLogado ? ( 
+            <Link to="/alimento">Alimentos para doação</Link>
              ) : (
               <Link to="/"></Link>
             )} 
@@ -61,7 +61,7 @@ const Menu = () => {
 
           <li>
              {isLogado ? ( 
-            <Link to="/PageCadastroAlimento">Cadastrar alimentos</Link>
+            <Link to="/cadastroalimento">Cadastrar alimentos</Link>
              ) : (
               <Link to="/login">Login</Link>
             )} 
@@ -71,7 +71,7 @@ const Menu = () => {
              {isLogado ? ( 
             <Link to="/editar">Estoque de alimentos</Link>
             ) : (
-              <Link to="/cadastro"></Link>
+              <Link to="/cadastro">Cadastre-se</Link>
             )} 
           </li>
         </ul>

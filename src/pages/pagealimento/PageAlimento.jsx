@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from "react";
-
-import alimento_1 from "../../assets/img/alimentos/banana.jpg";
-
-
 import CardContainer from "../../components/cardcontainer/CardContainer";
 import CardHome from "../../components/cardcontainer/CardHome";
 import { DivHome, H, Span } from "../../assets/style/StyleGloblal";
+
+import alimento_1 from "../../assets/img/alimentos/banana.jpg";
 
 const images = {
   1: alimento_1,
 };
 
+
 const PageAlimento = () => {
   const [alimentos, setalimentos] = useState([]);
 
   useEffect(() => {
-    fetch("/rest/menu/todos")
+    fetch("/rest/estoque/2")
       .then((resp) => {
         return resp.json();
       })
@@ -31,25 +30,28 @@ const PageAlimento = () => {
     <>
       <DivHome>
         <H>
-          <Span>As alimentos disponiveis para doação</Span>
+          <Span>Os alimentos disponíveis para doação</Span>
         </H>
 
         <CardContainer>
-          {alimentos.map((alimento) => (
-            <CardHome
+          {alimentos.map((alimento) => {
+            const [ano, mes, dia] = alimento.dataValidadeAlimento.split('-');
+            const dataFormatada = `${dia}/${mes}/${ano}`;
+
+            return (<CardHome
               key={alimento.id}
               id={alimento.id}
               foto={images[1]}
               nome={alimento.nomeAlimento}
-              calorias={alimento.quantidade}
-              validade={alimento.validade}>
-            </CardHome>
-          ))}
+              quantidade={alimento.quantidadeAlimento}
+              validade={dataFormatada}
+            ></CardHome>);
+          })}
         </CardContainer>
-
       </DivHome>
     </>
   );
 };
+
 
 export default PageAlimento;

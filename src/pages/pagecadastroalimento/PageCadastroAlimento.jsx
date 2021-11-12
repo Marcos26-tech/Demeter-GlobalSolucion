@@ -24,7 +24,7 @@ function PageCadastroAlimento() {
 
   const adicionarAlimento = (e) => {
     e.preventDefault();
-    fetch("/rest/cadastrar/" + id, {
+    fetch("/rest/cadastrar", {
       method: "post",
 
       headers: {
@@ -33,7 +33,7 @@ function PageCadastroAlimento() {
 
       body: JSON.stringify(novoAlimento),
     }).then(() => {
-      alert("Receita cadastrada com sucesso!");
+      alert("Alimento cadastrado com sucesso!");
     });
   };
 
@@ -43,7 +43,6 @@ function PageCadastroAlimento() {
 
   function sair() {
     localStorage.removeItem("isLogado");
-    localStorage.removeItem("isentidade");
     window.location.replace("/login");
   }
 

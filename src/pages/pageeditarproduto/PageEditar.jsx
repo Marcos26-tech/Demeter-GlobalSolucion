@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
+import AlimentoContainer from "../../components/cardcontainer/CardContainer";
+import CardEditacao from "../../components/cardcontainer/CardEditação";
+import { DivHome, H, Span } from "../../assets/style/StyleGloblal";
 
 import alimento_1 from "../../assets/img/alimentos/banana.jpg";
-
-
-import AlimentoContainer from "../../components/cardcontainer/CardContainer";
-import CardEditacao from "../../components/card/CardEditação";
-import { DivHome, H, Span } from "../../assets/style/StyleGloblal";
 
 const images = {
     1: alimento_1,
@@ -21,7 +19,7 @@ function PageEditar() {
   const [alimentos, setAlimentos] = useState([]);
 
   useEffect(() => {
-    fetch("/rest/menu/")
+    fetch("/rest/editar")
       .then((resp) => {
         return resp.json();
       })
