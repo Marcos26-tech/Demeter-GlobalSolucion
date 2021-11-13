@@ -19,8 +19,7 @@ function Routes() {
     <>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/home" component={Home} />
-        <Route path="/home/:id" component={Home} />
+        <Route path="/home/cnpj/:id" component={Home} />
         <Route path="/login" component={login} />
         <Route path="/cadastro" component={cadastro} />
         <Route path="/forgetPassword" component={forgetPassword} />
@@ -29,8 +28,9 @@ function Routes() {
         <Route path="/alimento" component={alimento} />
         <Route path="/selecionamercado" component={mercado} />
         <Route path="/estoque" component={estoque} />
-        <Route path="/mercados" component={PageMercados} />
+        <Route path="/mercados/:id" component={PageMercados} />
         <Route path="/alimentos/:id" component={PageAlimentos} />
+        <Route path="/sobrenos" component={sobrenos} />
       </Switch>
     </>
   );

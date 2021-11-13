@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   Section,
   Form,
@@ -12,15 +13,20 @@ import {
 } from "../../assets/style/StyledFormGlobal";
 
 function FormLogin() {
+
+  // MÉTODO GET
+  const [usuario, setUsuario] = useState([])
+
+
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
 
-  const [status, setStatus] = useState({
-    type: "",
-    mensagem: "",
-  });
+  // const [status, setStatus] = useState({
+  //   type: "",
+  //   mensagem: "",
+  // });
 
   //Receber os dados do formulário
   const valueInput = (e) =>
@@ -29,45 +35,63 @@ function FormLogin() {
   //Enviar os dados para o back-end
   const addUser = async (e) => {
     e.preventDefault();
-    if (!validate()) return;
 
-    const saveDataForm = true;
-    if (saveDataForm) {
-      setStatus({
-        type: "success",
-        mensagem: "Logado com sucesso Bem vindo",
-      });
-      setUser({
-        email: "",
-        password: "",
-      });
-    } else {
-      setStatus({
-        type: "error",
-        mensagem: "Erro: Usuário não cadastrado!",
-      });
-    }
+    // if (!validate()) return;
+    // Effect para trazer todo conteúdo do objeto
+    alert(user.email + " / " + user.password)
+    // window.location.replace(`/home/${usuario.idUsuario}`)
+
+
+    // window.location.replace(`/home/${usuario.idUsuario}`)
+
+
+    // const saveDataForm = true;
+    // if (saveDataForm) {
+    //   setStatus({
+    //     type: "success",
+    //     mensagem: "Logado com sucesso Bem vindo",
+    //   });
+
+    // } else {
+    //   setStatus({
+    //     type: "error",
+    //     mensagem: "Erro: Usuário não cadastrado!",
+    //   });
+    // }
   };
+  useEffect(() => {
+    fetch("/rest/usuario/login/" + user.email + "/" + user.password).then((resp) => {
+      return resp.json()
+    }).then((resp) => {
+      console.log(resp)
+      setUsuario(resp)
+      console.log("Usuario é: " + usuario)
+      console.log("Razão social: " + usuario.razaoSocial)
+      console.log("FIM DO USUARIO")
+    }).catch(error => {
+      console.log(error)
+    })
+  });
 
-  function validate() {
-    if (!user.email)
-      return setStatus({
-        type: "error",
-        mensagem: "Erro: Necessário preencher o campo e-mail!",
-      });
-    if (!user.password)
-      return setStatus({
-        type: "error",
-        mensagem: "Erro: Necessário preencher o campo senha!",
-      });
-    if (user.password.length < 6)
-      return setStatus({
-        type: "error",
-        mensagem: "Erro: A senha precisa ter pelo menos seis caracteres!",
-      });
+  // function validate() {
+  //   if (!user.email)
+  //     return setStatus({
+  //       type: "error",
+  //       mensagem: "Erro: Necessário preencher o campo e-mail!",
+  //     });
+  //   if (!user.password)
+  //     return setStatus({
+  //       type: "error",
+  //       mensagem: "Erro: Necessário preencher o campo senha!",
+  //     });
+  //   if (user.password.length < 6)
+  //     return setStatus({
+  //       type: "error",
+  //       mensagem: "Erro: A senha precisa ter pelo menos seis caracteres!",
+  //     });
 
-    return true;
-  }
+  //   return true;
+  // }
 
   const listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]");
 
@@ -75,7 +99,6 @@ function FormLogin() {
     if (user.email && user.password && user.password.length >= 6) {
       return (
         (document.getElementById("form").style.visibility = "hidden"),
-        window.location.replace("/home"),
         listaUser.push({
           logado: true,
           email: user.email,
@@ -94,7 +117,7 @@ function FormLogin() {
             <h2>Login Deméter</h2>
           </FormHeader>
 
-          {status.type === "success" ? (
+          {/* {status.type === "success" ? (
             <p style={{ color: "#08b842fd" }}>{status.mensagem}</p>
           ) : (
             ""
@@ -103,7 +126,7 @@ function FormLogin() {
             <p style={{ color: "#ff0000" }}>{status.mensagem}</p>
           ) : (
             ""
-          )}
+          )} */}
 
           <Form onSubmit={addUser} id="form">
             <FormFieldset>
@@ -123,8 +146,7 @@ function FormLogin() {
               <FormInput
                 type="password"
                 name="password"
-                placeholder="Senha Cadastrada"
-                autoComplete="on"
+                placeholder="Senha cadastrada"
                 onChange={valueInput}
                 value={user.password}
               />
@@ -137,10 +159,13 @@ function FormLogin() {
             </FormFieldset>
           </Form>
 
+
           <FormFieldset>
             <FormLink href="/cadastro">
               Não tem uma conta Clique aqui e junte-se a nós!
             </FormLink>
+            <Link title="home" to={`/home/cnpj/${usuario.idUsuario}`}>Sempre quis voar e cantar</Link>
+
           </FormFieldset>
 
           <FormFieldset>
