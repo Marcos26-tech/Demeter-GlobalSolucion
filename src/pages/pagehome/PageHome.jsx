@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import PageHomeCont  from "./PageHomeCont";
+import PageHomeCont from "./PageHomeCont";
 import sol from "../video/sol.mp4";
 import { Link } from "react-router-dom";
 
@@ -37,17 +37,21 @@ export const InnerLayout = styled.div`
 function PageHome(props) {
   let tipoUsuario = null
   if (props.match.path.toLowerCase().includes('home')) {
-  tipoUsuario = props.match.params.id
-}
+    tipoUsuario = props.match.params.id
+  }
   return (
     <>
-    <Link title="estoque" to="/estoque">Desejo ir para o estoque</Link>
-    <Link title="alimentos" to="/alimentos">Quero ver alimentos</Link>
+      {/* <div>
+        <Link title="estoque" to="/estoque">Desejo ir para o estoque</Link>
+      </div> */}
+      <div>
+        <Link title="mercados" to="/mercados">Quero ver os mercados</Link>
+      </div>
       <MainAreaStyled>
-      <video src={sol} muted playsInline autoPlay loop time="5000"></video>
-      <InnerLayout>
+        <video src={sol} muted playsInline autoPlay loop time="5000"></video>
+        <InnerLayout>
           <PageHomeCont />
-      </InnerLayout>
+        </InnerLayout>
       </MainAreaStyled>
     </>
   );
