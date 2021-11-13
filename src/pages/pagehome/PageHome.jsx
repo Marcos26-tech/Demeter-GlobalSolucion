@@ -35,17 +35,26 @@ export const InnerLayout = styled.div`
 `;
 
 function PageHome(props) {
-  let tipoUsuario = null
-  if (props.match.path.toLowerCase().includes('home')) {
-    tipoUsuario = props.match.params.id
+  let id = ""
+  if (props.match.path.toLowerCase().includes('cnpj')) {
+    id = props.match.params.id
+    console.log("id: "+  id)
   }
+
+const aiMeuPaidoCeu = () => {
+  alert("ID é: " + id)
+  console.log(id)
+}
   return (
     <>
       {/* <div>
         <Link title="estoque" to="/estoque">Desejo ir para o estoque</Link>
       </div> */}
       <div>
-        <Link title="mercados" to="/mercados">Quero ver os mercados</Link>
+        <Link title="mercados" to={`/mercados/${id}`}>Quero ver os mercados da minha região</Link>
+      </div>
+      <div>
+        <button onClick={aiMeuPaidoCeu}>ai meu pai do ceu</button>
       </div>
       <MainAreaStyled>
         <video src={sol} muted playsInline autoPlay loop time="5000"></video>

@@ -1,10 +1,14 @@
 import { React, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
-function PageMercados() {
+function PageMercados(props) {
 
-    let idUsuario = 1
-
+    let idUsuario = ""
+    if (props.match.path.toLowerCase().includes('mercados')) {
+        idUsuario = props.match.params.id
+        console.log("id: " + idUsuario)
+        alert(idUsuario)
+    }
     // MÉTODO GET PARA MERCADOS
     const [mercados, setMercados] = useState([])
 

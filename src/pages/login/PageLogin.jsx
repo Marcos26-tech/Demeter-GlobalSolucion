@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   Section,
   Form,
@@ -38,7 +39,8 @@ function FormLogin() {
     // if (!validate()) return;
     // Effect para trazer todo conteúdo do objeto
     alert(user.email + " / " + user.password)
-    
+    // window.location.replace(`/home/${usuario.idUsuario}`)
+
 
     // window.location.replace(`/home/${usuario.idUsuario}`)
 
@@ -63,9 +65,8 @@ function FormLogin() {
     }).then((resp) => {
       console.log(resp)
       setUsuario(resp)
-      alert("Espera aí...")
-      console.log("O usuario é: " + usuario)
-      console.log(usuario)
+      console.log("Usuario é: " + usuario)
+      console.log("Razão social: " + usuario.razaoSocial)
       console.log("FIM DO USUARIO")
     }).catch(error => {
       console.log(error)
@@ -145,8 +146,7 @@ function FormLogin() {
               <FormInput
                 type="password"
                 name="password"
-                placeholder="Senha Cadastrada"
-                autoComplete="on"
+                placeholder="Senha cadastrada"
                 onChange={valueInput}
                 value={user.password}
               />
@@ -159,10 +159,13 @@ function FormLogin() {
             </FormFieldset>
           </Form>
 
+
           <FormFieldset>
             <FormLink href="/cadastro">
               Não tem uma conta Clique aqui e junte-se a nós!
             </FormLink>
+            <Link title="home" to={`/home/cnpj/${usuario.idUsuario}`}>Sempre quis voar e cantar</Link>
+
           </FormFieldset>
 
           <FormFieldset>
