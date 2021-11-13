@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Section,
   Form,
@@ -12,15 +12,28 @@ import {
 } from "../../assets/style/StyledFormGlobal";
 
 function FormLogin() {
+
+  // MÉTODO GET
+  const [usuario, setUsuario] = useState([{
+    idUsuario: null,
+    cnpjUsuario: null,
+    razaoSocial: "",
+    emailUusario: "",
+    senhaUsuario: "",
+    tipoUsuario: "",
+    regiaoUsuario: ""
+  }])
+
+
   const [user, setUser] = useState({
     email: "",
     password: "",
   });
 
-  const [status, setStatus] = useState({
-    type: "",
-    mensagem: "",
-  });
+  // const [status, setStatus] = useState({
+  //   type: "",
+  //   mensagem: "",
+  // });
 
   //Receber os dados do formulário
   const valueInput = (e) =>
@@ -29,53 +42,72 @@ function FormLogin() {
   //Enviar os dados para o back-end
   const addUser = async (e) => {
     e.preventDefault();
-    if (!validate()) return;
 
-    const saveDataForm = true;
-    if (saveDataForm) {
-      setStatus({
-        type: "success",
-        mensagem: "Logado com sucesso Bem vindo",
-      });
-      setUser({
-        email: "",
-        password: "",
-      });
-    } else {
-      setStatus({
-        type: "error",
-        mensagem: "Erro: Usuário não cadastrado!",
-      });
-    }
+    // if (!validate()) return;
+    // Effect para trazer todo conteúdo do objeto
+    alert(user.email + " / " + user.password)
+    fetch("/rest/usuario/login/" + user.email + "/" + user.password).then((resp) => {
+      return resp.json()
+    }).then((resp) => {
+      setUsuario(resp)
+      alert("Setei o usuario: " +
+        usuario.idUsuario + "\n" +
+        usuario.cnpjUsuario + "\n" +
+        usuario.razaoSocial + "\n" +
+        usuario.emailUusario + "\n" +
+        usuario.senhaUsuario + "\n" +
+        usuario.tipoUsuario + "\n" +
+        usuario.regiaoUsuario)
+      console.log(resp)
+    }).catch(error => {
+      console.log(error)
+    })
+    // window.location.replace(`/home/${usuario.idUsuario}`)
+
+
+    // const saveDataForm = true;
+    // if (saveDataForm) {
+    //   setStatus({
+    //     type: "success",
+    //     mensagem: "Logado com sucesso Bem vindo",
+    //   });
+
+    // } else {
+    //   setStatus({
+    //     type: "error",
+    //     mensagem: "Erro: Usuário não cadastrado!",
+    //   });
+    // }
   };
 
-  function validate() {
-    if (!user.email)
-      return setStatus({
-        type: "error",
-        mensagem: "Erro: Necessário preencher o campo e-mail!",
-      });
-    if (!user.password)
-      return setStatus({
-        type: "error",
-        mensagem: "Erro: Necessário preencher o campo senha!",
-      });
-    if (user.password.length < 6)
-      return setStatus({
-        type: "error",
-        mensagem: "Erro: A senha precisa ter pelo menos seis caracteres!",
-      });
+  // function validate() {
+  //   if (!user.email)
+  //     return setStatus({
+  //       type: "error",
+  //       mensagem: "Erro: Necessário preencher o campo e-mail!",
+  //     });
+  //   if (!user.password)
+  //     return setStatus({
+  //       type: "error",
+  //       mensagem: "Erro: Necessário preencher o campo senha!",
+  //     });
+  //   if (user.password.length < 6)
+  //     return setStatus({
+  //       type: "error",
+  //       mensagem: "Erro: A senha precisa ter pelo menos seis caracteres!",
+  //     });
 
-    return true;
-  }
+  //   return true;
+  // }
 
   const listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]");
 
   function someLogin() {
+    alert("Passei primeiro aqui...")
+
     if (user.email && user.password && user.password.length >= 6) {
       return (
         (document.getElementById("form").style.visibility = "hidden"),
-        window.location.replace("/home"),
         listaUser.push({
           logado: true,
           email: user.email,
@@ -94,7 +126,7 @@ function FormLogin() {
             <h2>Login Deméter</h2>
           </FormHeader>
 
-          {status.type === "success" ? (
+          {/* {status.type === "success" ? (
             <p style={{ color: "#08b842fd" }}>{status.mensagem}</p>
           ) : (
             ""
@@ -103,7 +135,7 @@ function FormLogin() {
             <p style={{ color: "#ff0000" }}>{status.mensagem}</p>
           ) : (
             ""
-          )}
+          )} */}
 
           <Form onSubmit={addUser} id="form">
             <FormFieldset>

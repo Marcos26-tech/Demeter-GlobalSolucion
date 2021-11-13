@@ -47,7 +47,7 @@ function Registro() {
           type: "success",
           mensagem: "Usuário cadastrado com sucesso!",
         });
-        window.location.replace(`/login/${user.tipoUsuario}`);
+        window.location.replace("/login");
       } else {
         setStatus({
           type: "error",
