@@ -31,6 +31,7 @@ function Routes() {
         <Route path="/estoque" component={estoque} />
         <Route path="/mercados" component={PageMercados} />
         <Route path="/alimentos/:id" component={PageAlimentos} />
+        <Route path="/sobrenos" component={sobrenos} />
       </Switch>
     </>
   );

@@ -14,15 +14,7 @@ import {
 function FormLogin() {
 
   // MÉTODO GET
-  const [usuario, setUsuario] = useState([{
-    idUsuario: null,
-    cnpjUsuario: null,
-    razaoSocial: "",
-    emailUusario: "",
-    senhaUsuario: "",
-    tipoUsuario: "",
-    regiaoUsuario: ""
-  }])
+  const [usuario, setUsuario] = useState([])
 
 
   const [user, setUser] = useState({
@@ -46,22 +38,8 @@ function FormLogin() {
     // if (!validate()) return;
     // Effect para trazer todo conteúdo do objeto
     alert(user.email + " / " + user.password)
-    fetch("/rest/usuario/login/" + user.email + "/" + user.password).then((resp) => {
-      return resp.json()
-    }).then((resp) => {
-      setUsuario(resp)
-      alert("Setei o usuario: " +
-        usuario.idUsuario + "\n" +
-        usuario.cnpjUsuario + "\n" +
-        usuario.razaoSocial + "\n" +
-        usuario.emailUusario + "\n" +
-        usuario.senhaUsuario + "\n" +
-        usuario.tipoUsuario + "\n" +
-        usuario.regiaoUsuario)
-      console.log(resp)
-    }).catch(error => {
-      console.log(error)
-    })
+    
+
     // window.location.replace(`/home/${usuario.idUsuario}`)
 
 
@@ -79,6 +57,20 @@ function FormLogin() {
     //   });
     // }
   };
+  useEffect(() => {
+    fetch("/rest/usuario/login/" + user.email + "/" + user.password).then((resp) => {
+      return resp.json()
+    }).then((resp) => {
+      console.log(resp)
+      setUsuario(resp)
+      alert("Espera aí...")
+      console.log("O usuario é: " + usuario)
+      console.log(usuario)
+      console.log("FIM DO USUARIO")
+    }).catch(error => {
+      console.log(error)
+    })
+  });
 
   // function validate() {
   //   if (!user.email)
@@ -103,8 +95,6 @@ function FormLogin() {
   const listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]");
 
   function someLogin() {
-    alert("Passei primeiro aqui...")
-
     if (user.email && user.password && user.password.length >= 6) {
       return (
         (document.getElementById("form").style.visibility = "hidden"),
