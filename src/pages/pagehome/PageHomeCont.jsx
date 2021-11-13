@@ -10,6 +10,10 @@ const Section = styled.section`
   padding: 2em;
   align-items: center;
   color: #000000;
+  a{
+    color: #e40707;
+    text-decoration: none;
+  }
 `;
 
 const Div = styled.div`
