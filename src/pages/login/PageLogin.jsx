@@ -38,7 +38,7 @@ function FormLogin() {
 
     // if (!validate()) return;
     // Effect para trazer todo conteúdo do objeto
-    alert(user.email + " / " + user.password)
+    
     // window.location.replace(`/home/${usuario.idUsuario}`)
 
 
@@ -164,7 +164,7 @@ function FormLogin() {
             <FormLink href="/cadastro">
               Não tem uma conta Clique aqui e junte-se a nós!
             </FormLink>
-            <Link title="home" to={`/home/cnpj/${usuario.idUsuario}`}>Sempre quis voar e cantar</Link>
+            <Link title="home" to={`/home/id/${usuario.idUsuario}`}>Sempre quis voar e cantar</Link>
 
           </FormFieldset>
 
