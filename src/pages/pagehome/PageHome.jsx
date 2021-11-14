@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import styled from "styled-components";
 import PageHomeCont from "./PageHomeCont";
 import sol from "../video/sol.mp4";
@@ -36,25 +36,36 @@ export const InnerLayout = styled.div`
 
 function PageHome(props) {
   let id = ""
-  if (props.match.path.toLowerCase().includes('cnpj')) {
+
+  if (props.match.path.toLowerCase().includes('id')) {
     id = props.match.params.id
-    console.log("id: "+  id)
+    console.log("id: " + id)
   }
 
-const aiMeuPaidoCeu = () => {
-  alert("ID é: " + id)
-  console.log(id)
-}
+
+  // useEffect(() => {
+  //   fetch("/rest/usuario/login/" + user.email + "/" + user.password).then((resp) => {
+  //     return resp.json()
+  //   }).then((resp) => {
+  //     console.log(resp)
+  //     setUsuario(resp)
+  //     console.log("Usuario é: " + usuario)
+  //     console.log("Razão social: " + usuario.razaoSocial)
+  //     console.log("FIM DO USUARIO")
+  //   }).catch(error => {
+  //     console.log(error)
+  //   })
+  // }, []);
+
+
   return (
     <>
       {/* <div>
         <Link title="estoque" to="/estoque">Desejo ir para o estoque</Link>
       </div> */}
       <div>
+        <h2>SOU ENTIDADE</h2>
         <Link title="mercados" to={`/mercados/${id}`}>Quero ver os mercados da minha região</Link>
-      </div>
-      <div>
-        <button onClick={aiMeuPaidoCeu}>ai meu pai do ceu</button>
       </div>
       <MainAreaStyled>
         <video src={sol} muted playsInline autoPlay loop time="5000"></video>

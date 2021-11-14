@@ -9,7 +9,7 @@ import cadastroalimento from "./pages/pagecadastroalimento/PageCadastroAlimento"
 import alimento from "./pages/pagealimento/PageAlimento"
 import mercado from "./pages/pagemercado/PageMercado"
 import estoque from './pages/pageestoque/PageEstoque'
-import PageAlimentos from "./pages/pagealimentos/PageAlimentos";
+import PageTodosAlimentos from "./pages/pagetodosalimentos/PageTodosAlimentos";
 import PageMercados from "./pages/pagemercados/PageMercados";
 import sobrenos from "./pages/pagesobrenos/PageSobreNos"
 
@@ -19,7 +19,7 @@ function Routes() {
     <>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/home/cnpj/:id" component={Home} />
+        <Route path="/home/id/:id" component={Home} />
         <Route path="/login" component={login} />
         <Route path="/cadastro" component={cadastro} />
         <Route path="/forgetPassword" component={forgetPassword} />
@@ -29,7 +29,7 @@ function Routes() {
         <Route path="/selecionamercado" component={mercado} />
         <Route path="/estoque" component={estoque} />
         <Route path="/mercados/:id" component={PageMercados} />
-        <Route path="/alimentos/:id" component={PageAlimentos} />
+        <Route path="/alimentos/:id" component={PageTodosAlimentos} />
         <Route path="/sobrenos" component={sobrenos} />
       </Switch>
     </>

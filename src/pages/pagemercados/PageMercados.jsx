@@ -6,8 +6,8 @@ function PageMercados(props) {
     let idUsuario = ""
     if (props.match.path.toLowerCase().includes('mercados')) {
         idUsuario = props.match.params.id
-        console.log("id: " + idUsuario)
-        alert(idUsuario)
+        console.log("id é: " + idUsuario)
+        
     }
     // MÉTODO GET PARA MERCADOS
     const [mercados, setMercados] = useState([])
@@ -38,10 +38,6 @@ function PageMercados(props) {
         })
     }, [])
 
-
-
-
-
     return (
         <div>
 
@@ -51,18 +47,17 @@ function PageMercados(props) {
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>CNPJ</th>
-                            <th>Razão Social</th>
-                            <th>Editar</th>
+                            <th>Supermercados</th>
+                            <th>Quero ver os estoques</th>
                         </tr>
                     </thead>
                     <tbody>
                         {mercados.map((mercado) => (
                             <tr key={mercado.idUsuario}>
-                                <td>{mercado.cnpjUsuario}</td>
+                                <td>{mercado.idUsuario}</td>
                                 <td>{mercado.razaoSocial}</td>
                                 {/* NA LINHA ABAIXO TEREMOS QUE PEGAR O ID DO ESTOQUE DO MERCADO */}
-                                <td><Link title="estoque-mercado" to={`/alimentos/${mercado.idUsuario}`}>Acessar</Link>  |
+                                <td><Link title="estoque-mercado" to={`/alimentos/${mercado.idUsuario}`}>Acessar estoque</Link>  |
                                     <button>Excluir </button>
                                 </td>
                             </tr>
