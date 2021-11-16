@@ -22,7 +22,7 @@ function MostraModal(props) {
 
   function sairModal() {
     setShow(!show);
-    fetch("http://localhost:8080/DemeterGlobalSolution/rest/estoque/"`${userCtx.idUsuario}`
+    fetch(`http://localhost:8080/DemeterGlobalSolution/rest/estoque/${userCtx.idUsuario}`
     )
       .then((response) => response.json()
     );
@@ -39,7 +39,7 @@ function MostraModal(props) {
   });
 
   const editarAlimento = () => {
-    fetch("/rest/estoque/editar/"`${userCtx.idUsuario}/${id}`,
+    fetch("/rest/estoque/editar/"`${userCtx.idUsuario}`/+id,
       {
         method: "put",
         headers: {
