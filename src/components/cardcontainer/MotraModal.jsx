@@ -25,15 +25,8 @@ function MostraModal(props) {
     const response = fetch(
       `http://localhost:8080/DemeterGlobalSolution/rest/estoque/${userCtx.idUsuario}`
     )
-      .then((resp) => {
-        return resp.json();
-      })
-      .then((resp) => {
-        setAlimento(resp);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+      .then((response) => response.json()
+    );
   }
 
   let id = props.idAlimento;
@@ -46,14 +39,12 @@ function MostraModal(props) {
   });
 
   const editarAlimento = () => {
-    fetch(
-      `http://localhost:8080/DemeterGlobalSolution/rest/estoque/editar/${userCtx.idUsuario}/${id}`,
+    fetch("/rest/estoque/editar/"`${userCtx.idUsuario}/${id}`,
       {
         method: "put",
         headers: {
           "Content-Type": "application/json",
         },
-
         body: JSON.stringify(novoalimento),
       }
     ).then(() => {
@@ -100,12 +91,9 @@ function MostraModal(props) {
                   </StyledQuestionario>
                 </Section>
               </ModalBody>
-
               <ModalFooter>
                 <FormButton3 onClick={() => sairModal()}>Sair</FormButton3>
-                <FormButton2 onClick={() => editarAlimento()}>
-                  salvar
-                </FormButton2>
+                <FormButton2 onClick={() => editarAlimento()}>salvar</FormButton2>
               </ModalFooter>
             </Container>
           </ModalContent2021>
