@@ -39,8 +39,7 @@ function MostraModal(props) {
   });
 
   const editarAlimento = () => {
-    fetch("/rest/estoque/editar/"`${userCtx.idUsuario}`/+id,
-      {
+    fetch("/rest/estoque/editar/"`${userCtx.idUsuario}`+ id,{
         method: "put",
         headers: {
           "Content-Type": "application/json",
