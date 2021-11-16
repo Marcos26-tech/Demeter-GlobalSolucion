@@ -22,8 +22,7 @@ function MostraModal(props) {
 
   function sairModal() {
     setShow(!show);
-    const response = fetch(
-      `http://localhost:8080/DemeterGlobalSolution/rest/estoque/${userCtx.idUsuario}`
+    fetch("http://localhost:8080/DemeterGlobalSolution/rest/estoque/"`${userCtx.idUsuario}`
     )
       .then((response) => response.json()
     );

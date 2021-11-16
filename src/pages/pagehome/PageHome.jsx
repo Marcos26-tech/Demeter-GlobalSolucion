@@ -1,8 +1,7 @@
-import { React, useState, useEffect } from "react";
+import React  from "react";
 import styled from "styled-components";
 import PageHomeCont from "./PageHomeCont";
 import sol from "../video/sol.mp4";
-import { Link } from "react-router-dom";
 
 const MainAreaStyled = styled.div`
   width: 100%;

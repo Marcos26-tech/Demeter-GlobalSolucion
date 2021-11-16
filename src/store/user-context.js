@@ -37,9 +37,7 @@ export const UserContextProvider = (props) => {
     let user = {};
     setIsLoadingLogin(true);
     try {
-      const response = await fetch(
-        `http://localhost:8080/DemeterGlobalSolution/rest/usuario/login/${formEmail}/${formPassword}`
-      );
+      const response = await fetch("rest/usuario/login/"`${formEmail}/${formPassword}`);
       user = await response.json();
     } catch (err) {
       toast.error(

@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, {useContext } from "react";
 import UserContext from "../../store/user-context";
-import { Link } from "react-router-dom";
+
 import {
   Section,
   Form,

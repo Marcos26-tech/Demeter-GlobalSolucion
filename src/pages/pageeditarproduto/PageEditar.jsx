@@ -16,8 +16,7 @@ function PageEditar() {
   const [alimentos, setAlimentos] = useState([]);
 
   useEffect(() => {
-    fetch(
-      `http://localhost:8080/DemeterGlobalSolution/rest/estoque/${userCtx.idUsuario}`
+    fetch("http://localhost:8080/DemeterGlobalSolution/rest/estoque/"`${userCtx.idUsuario}`
     )
       .then((resp) => {
         return resp.json();
