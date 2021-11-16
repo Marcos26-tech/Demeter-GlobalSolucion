@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import UserContext from "../../store/user-context";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
@@ -39,8 +40,7 @@ const StyledMenu = styled.nav`
 `;
 
 const Menu = () => {
-  
-  let ListaUser = window.localStorage.getItem("listaUser");
+  const userCtx = useContext(UserContext);
 
   return (
     <>
@@ -51,27 +51,40 @@ const Menu = () => {
           </li>
 
           <li>
-             {ListaUser  ? ( 
-            <Link to="/selecionamercado">Alimentos para doação</Link>
-             ) : (
-              <Link to="/"></Link>
-            )} 
-          </li>
-
-          <li>
-             {ListaUser? ( 
-            <Link to="/cadastroalimento">Cadastrar alimentos</Link>
-             ) : (
-              <Link to="/login">Login</Link>
-            )} 
-          </li>
-
-          <li>
-             {ListaUser ? ( 
-            <Link to="/editar">Estoque de alimentos</Link>
+            {userCtx.tipoUsuario === "entidade" ? (
+              <Link to="/selecionamercado">Alimentos para doação</Link>
             ) : (
-              <Link to="/cadastro">Cadastre-se</Link>
-            )} 
+              ""
+            )}
+          </li>
+
+          <li>
+            {!userCtx.isLoggedIn ? <Link to="/cadastro">Cadastre-se</Link> : ""}
+          </li>
+
+          <li>
+            {userCtx.tipoUsuario === "supermercado" ? (
+              <Link to="/cadastroalimento">Cadastrar alimentos</Link>
+            ) : (
+              ""
+            )}
+          </li>
+
+          <li>
+            {userCtx.tipoUsuario === "supermercado" ? (
+              <Link to="/editar">Estoque de alimentos</Link>
+            ) : (
+              ""
+            )}
+          </li>
+          <li>
+            {userCtx.isLoggedIn ? (
+              <Link to="/home" onClick={userCtx.logout}>
+                Sair
+              </Link>
+            ) : (
+              <Link to="/login">Login</Link>
+            )}
           </li>
         </ul>
       </StyledMenu>

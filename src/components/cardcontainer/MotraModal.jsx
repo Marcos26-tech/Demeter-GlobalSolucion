@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import UserContext from "../../store/user-context";
+
 import {
   Modal,
   ModalContent2021,
@@ -14,33 +16,47 @@ import {
 } from "../../assets/style/StyledModal";
 
 function MostraModal(props) {
+  const userCtx = useContext(UserContext);
+
   const [show, setShow] = useState(false);
 
   function sairModal() {
     setShow(!show);
-    window.location.replace("/editar");
+    const response = fetch(
+      `http://localhost:8080/DemeterGlobalSolution/rest/estoque/${userCtx.idUsuario}`
+    )
+      .then((resp) => {
+        return resp.json();
+      })
+      .then((resp) => {
+        setAlimento(resp);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
 
-  let id = props.id;
-  let nome = props.nome;
-  let quantidade = props.quantidade;
-  let validade = props.validade;
+  let id = props.idAlimento;
+  let quantidade = props.quantidadeAlimento;
+  let validade = props.dataValidadeAlimento;
 
   const [novoalimento, setAlimento] = useState({
-    nomeAlimento: nome,
     quantidade: quantidade,
     validade: validade,
   });
 
   const editarAlimento = () => {
-    fetch("/rest/menu/" + id, {
-      method: "put",
-      headers: {
-        "Content-Type": "application/json",
-      },
+    fetch(
+      `http://localhost:8080/DemeterGlobalSolution/rest/estoque/editar/${userCtx.idUsuario}/${id}`,
+      {
+        method: "put",
+        headers: {
+          "Content-Type": "application/json",
+        },
 
-      body: JSON.stringify(novoalimento),
-    }).then(() => {
+        body: JSON.stringify(novoalimento),
+      }
+    ).then(() => {
       alert("Alimento editada com sucesso!");
       sairModal();
     });
@@ -66,14 +82,6 @@ function MostraModal(props) {
             <Container>
               <ModalBody>
                 <Section>
-                  <StyledQuestionario>
-                    <input
-                      type="text"
-                      name="nomeAlimenbto"
-                      onChange={digitacao}
-                      placeholder="Edite o nome do alimento"
-                    />
-                  </StyledQuestionario>
                   <StyledQuestionario>
                     <input
                       type="number"

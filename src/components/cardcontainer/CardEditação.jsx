@@ -13,11 +13,11 @@ const Produto = styled.div`
     width: 100%;
   }
   p {
-    text-align:center;
-    text-align:justify;
+    text-align: center;
+    text-align: justify;
   }
-  h3{
-    text-align:center;
+  h3 {
+    text-align: center;
   }
 `;
 
@@ -36,7 +36,7 @@ const CardEditacao = (props) => {
           <Button onClick={() => showModal()}>Editar</Button>
           <h3>{props.nome}</h3>
           <p>
-            <em>{props.quantidade} Quantidade disponivel</em>
+            <em>Quantidade disponivel: {props.quantidade}</em>
           </p>
           <p>{props.validade}</p>
         </div>
@@ -44,10 +44,9 @@ const CardEditacao = (props) => {
 
       {show && (
         <Modal
-          id={props.id}
-          nome={props.nomeAlimento}
-          quantidade={props.quantidade}
-          alimento={props.validade}
+          id={props.idAlimento}
+          quantidade={props.quantidadeAlimento}
+          validade={props.dataValidadeAlimento}
         ></Modal>
       )}
     </>

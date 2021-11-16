@@ -18,6 +18,7 @@
 - npm install styled-components
 - npm install --save typewriter-effect
 - npm install react-icons --save styled
+- npm install react-toastify
 
 In the project directory, you can run:
 

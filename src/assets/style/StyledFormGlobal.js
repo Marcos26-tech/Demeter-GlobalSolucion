@@ -21,7 +21,7 @@ export const Form = styled.form`
 
 export const FormWrapper = styled.div`
   background-color: #ffffff10;
-  backdrop-filter:blur(12px);
+  backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   overflow: hidden;
   padding: 0px 0 30px;
@@ -42,7 +42,7 @@ export const FormHeader = styled.header`
   padding-top: 24px;
   padding-bottom: 19px;
   h2 {
-    color:  #f00909;
+    color: #f00909;
     font-size: 25px;
     font-weight: bold;
     text-align: center;
@@ -111,7 +111,7 @@ export const FormButton = styled.button`
   transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
   &:hover {
     background-image: linear-gradient(to right, #f6d365 0%, #fda085 100%);
-    box-shadow: 0 15px 15px  #fda085;
+    box-shadow: 0 15px 15px #fda085;
     transform: translate(0, -5px);
   }
 `;
@@ -136,5 +136,4 @@ export const Forml = styled.div`
   margin-top: 11rem;
   padding: 1rem;
   text-align: center;
-
 `;
