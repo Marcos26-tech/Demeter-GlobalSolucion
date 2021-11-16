@@ -44,7 +44,7 @@ const CardEditacao = (props) => {
 
       {show && (
         <Modal
-          id={props.idAlimento}
+          id={props.id}
           quantidade={props.quantidadeAlimento}
           validade={props.dataValidadeAlimento}
         ></Modal>

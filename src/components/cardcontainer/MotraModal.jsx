@@ -26,6 +26,7 @@ function MostraModal(props) {
     )
       .then((response) => response.json()
     );
+
   }
 
   let id = props.idAlimento;
@@ -33,8 +34,8 @@ function MostraModal(props) {
   let validade = props.dataValidadeAlimento;
 
   const [novoalimento, setAlimento] = useState({
-    quantidade: quantidade,
-    validade: validade,
+    quantidadeAlimento: quantidade,
+    dataValidadeAlimento: validade,
   });
 
   const editarAlimento = () => {
@@ -75,7 +76,7 @@ function MostraModal(props) {
                   <StyledQuestionario>
                     <input
                       type="number"
-                      name="quantidade"
+                      name="quantidadeAlimento"
                       onChange={digitacao}
                       placeholder="Edite a quantidade disponivel deste alimento"
                     />
@@ -83,7 +84,7 @@ function MostraModal(props) {
                   <StyledQuestionario>
                     <input
                       type="data"
-                      name="validade"
+                      name="dataValidadeAlimento"
                       onChange={digitacao}
                       placeholder="Edite a data de validade do alimento"
                     />
