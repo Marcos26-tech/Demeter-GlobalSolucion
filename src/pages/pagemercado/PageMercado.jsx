@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import CardContainer from "../../components/cardcontainer/CardContainer";
 import CardMercado from "../../components/cardcontainer/CardMercado";
 import { DivHome, H, Span } from "../../assets/style/StyleGloblal";
+import UserContext from "../../store/user-context";
 
 import mercado_1 from "../../assets/img/alimentos/mercado.gif";/*não ta funcionando o gif ainda*/
 
@@ -9,10 +10,11 @@ const images = {mercado_1};
 
 
 const PageMercado = () => {
+  const userCtx = useContext(UserContext);
   const [mercados, setmercados] = useState([]);
 
   useEffect(() => {
-    fetch("/rest/reserva/2")
+    fetchfetch(`http://localhost:8080/DemeterGlobalSolution/rest/reserva/${userCtx.idUsuario}`)
       .then((resp) => {
         return resp.json();
       })
