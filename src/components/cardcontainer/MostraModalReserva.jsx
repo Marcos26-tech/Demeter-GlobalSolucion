@@ -54,21 +54,24 @@ function MostraModal(props) {
 
         body: JSON.stringify(novoalimento),
       }
-    ).then((response) => {
-      console.log(response.body.values);
-      if (response.body.values === true) {
-        setStatus({
-          type: "success",
-          mensagem: "Alimento reservado com sucesso!",
-        });
-        // window.location.replace("/alimento/" + 2);
-      } else {
-        setStatus({
-          type: "error",
-          mensagem: "Erro ao reservar o alimento, estoque insuficiente!",
-        });
-      }
-    });
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        // let result = response.json();
+        console.log(data);
+        if (data === true) {
+          setStatus({
+            type: "success",
+            mensagem: "Alimento reservado com sucesso!",
+          });
+          // window.location.replace("/alimento/" + 2);
+        } else {
+          setStatus({
+            type: "error",
+            mensagem: "Erro ao reservar o alimento, estoque insuficiente!",
+          });
+        }
+      });
   }
 
   const digitacao = (e) => {
