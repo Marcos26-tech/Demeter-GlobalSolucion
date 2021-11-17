@@ -22,24 +22,37 @@ function MostraModal(props) {
 
   function sairModal() {
     setShow(!show);
-    fetch(`http://localhost:8080/DemeterGlobalSolution/rest/estoque/${userCtx.idUsuario}`
-    )
-      .then((response) => response.json()
-    );
-
+    fetch(
+      `http://localhost:8080/DemeterGlobalSolution/rest/estoque/${userCtx.idUsuario}`
+    ).then((response) => response.json());
   }
 
-  let id = props.idAlimento;
+  // var date = new Date("11/21/1987 16:00:00"); // some mock datevar milliseconds = date.getTime();
+
+  let id = props.id;
   let quantidade = props.quantidadeAlimento;
   let validade = props.dataValidadeAlimento;
 
+  // function formatDateToSequelize(date) {
+  //   if (!date) return;
+  //   return date.split("/").reverse().join("-");
+  // }
+
+  // let novaData = formatDateToSequelize(validade);
+  // let novaData2 = novaData.getTime();
+
   const [novoalimento, setAlimento] = useState({
     quantidadeAlimento: quantidade,
-    dataValidadeAlimento: validade,
+    dataValidadeAlimento: dataFormatada,
   });
 
+  console.log(novoalimento.dataValidadeAlimento);
+  console.log(dataFormatada);
+
   const editarAlimento = () => {
-    fetch("/rest/estoque/editar/"`${userCtx.idUsuario}`+ id,{
+    fetch(
+      `http://localhost:8080/DemeterGlobalSolution/rest/estoque/editar/${userCtx.idUsuario}/${id}`,
+      {
         method: "put",
         headers: {
           "Content-Type": "application/json",
@@ -55,6 +68,9 @@ function MostraModal(props) {
   const digitacao = (e) => {
     setAlimento({ ...novoalimento, [e.target.name]: e.target.value });
   };
+
+  const [dia, mes, ano] = novoalimento.dataValidadeAlimento.split("/");
+  const dataFormatada = `${ano}-${mes}-${dia}`;
 
   useEffect(() => {}, [novoalimento]);
 
@@ -82,7 +98,7 @@ function MostraModal(props) {
                   </StyledQuestionario>
                   <StyledQuestionario>
                     <input
-                      type="data"
+                      type="text"
                       name="dataValidadeAlimento"
                       onChange={digitacao}
                       placeholder="Edite a data de validade do alimento"
@@ -92,7 +108,9 @@ function MostraModal(props) {
               </ModalBody>
               <ModalFooter>
                 <FormButton3 onClick={() => sairModal()}>Sair</FormButton3>
-                <FormButton2 onClick={() => editarAlimento()}>salvar</FormButton2>
+                <FormButton2 onClick={() => editarAlimento()}>
+                  salvar
+                </FormButton2>
               </ModalFooter>
             </Container>
           </ModalContent2021>
