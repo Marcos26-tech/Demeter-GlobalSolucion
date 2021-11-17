@@ -37,6 +37,11 @@ function MostraModal(props) {
 
   console.log(novoalimento);
 
+  const [status, setStatus] = useState({
+    type: "",
+    mensagem: "",
+  });
+
   function reservaAlimento() {
     fetch(
       `http://localhost:8080/DemeterGlobalSolution/rest/reserva/reservar/${userCtx.idUsuario}`,
@@ -49,19 +54,21 @@ function MostraModal(props) {
 
         body: JSON.stringify(novoalimento),
       }
-    )
-      .then(() => {
-        alert("Alimento reservado com sucesso!");
-      })
-      .then(() => {
-        // let idReserva = "";
-        // let idUsuaria = null;
-        // if (props.match.path.toLowerCase().includes("alimento")) {
-        //   idUsuaria = props.match.params.idReserva;
-        // }
-
-        window.location.replace("/alimento/" + 2);
-      });
+    ).then((response) => {
+      console.log(response.body.values);
+      if (response.body.values === true) {
+        setStatus({
+          type: "success",
+          mensagem: "Alimento reservado com sucesso!",
+        });
+        // window.location.replace("/alimento/" + 2);
+      } else {
+        setStatus({
+          type: "error",
+          mensagem: "Erro ao reservar o alimento, estoque insuficiente!",
+        });
+      }
+    });
   }
 
   const digitacao = (e) => {
@@ -75,6 +82,17 @@ function MostraModal(props) {
       {!show && (
         <Modal>
           <ModalContent2021>
+            {status.type === "success" ? (
+              <p style={{ color: "#033d11" }}>{status.mensagem}</p>
+            ) : (
+              ""
+            )}
+            {status.type === "error" ? (
+              <p style={{ color: "#ff0000" }}>{status.mensagem}</p>
+            ) : (
+              ""
+            )}
+
             <ModalHeader>
               <Span>
                 <h3>Editação do estoque dos Alimentos</h3>
