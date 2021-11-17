@@ -10,13 +10,14 @@ const images = {
   1: alimento_1,
 };
 
-
-const PageAlimento = () => {
+const PageAlimento = (props) => {
   const userCtx = useContext(UserContext);
   const [alimentos, setalimentos] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8080/DemeterGlobalSolution/rest/estoque/${userCtx.idUsuario}`)
+    fetch(
+      `http://localhost:8080/DemeterGlobalSolution/rest/estoque/${userCtx.idUsuario}`
+    )
       .then((resp) => {
         return resp.json();
       })
@@ -37,23 +38,24 @@ const PageAlimento = () => {
 
         <CardContainer>
           {alimentos.map((alimento) => {
-            const [ano, mes, dia] = alimento.dataValidadeAlimento.split('-');
+            const [ano, mes, dia] = alimento.dataValidadeAlimento.split("-");
             const dataFormatada = `${dia}/${mes}/${ano}`;
 
-            return (<CardHome
-              key={alimento.id}
-              id={alimento.id}
-              foto={images[1]}
-              nome={alimento.nomeAlimento}
-              quantidade={alimento.quantidadeAlimento}
-              validade={dataFormatada}
-            ></CardHome>);
+            return (
+              <CardHome
+                key={alimento.id}
+                id={alimento.id}
+                foto={images[1]}
+                nome={alimento.nomeAlimento}
+                quantidade={alimento.quantidadeAlimento}
+                validade={dataFormatada}
+              ></CardHome>
+            );
           })}
         </CardContainer>
       </DivHome>
     </>
   );
 };
-
 
 export default PageAlimento;

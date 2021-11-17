@@ -10,7 +10,6 @@ import {
   Divi,
 } from "../../assets/style/StyleCadastroAlimento";
 
-
 function PageCadastroAlimento() {
   const userCtx = useContext(UserContext);
 
@@ -66,7 +65,7 @@ function PageCadastroAlimento() {
         </Dividir>
         <Div2>
           <input
-            type="data"
+            type="date"
             name="dataValidadeAlimento"
             onChange={digitacao}
             placeholder="Digite a data de Validade do Alimento"

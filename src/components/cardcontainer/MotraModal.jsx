@@ -27,27 +27,16 @@ function MostraModal(props) {
     ).then((response) => response.json());
   }
 
-  // var date = new Date("11/21/1987 16:00:00"); // some mock datevar milliseconds = date.getTime();
-
   let id = props.id;
   let quantidade = props.quantidadeAlimento;
   let validade = props.dataValidadeAlimento;
-
-  // function formatDateToSequelize(date) {
-  //   if (!date) return;
-  //   return date.split("/").reverse().join("-");
-  // }
-
-  // let novaData = formatDateToSequelize(validade);
-  // let novaData2 = novaData.getTime();
 
   const [novoalimento, setAlimento] = useState({
     quantidadeAlimento: quantidade,
     dataValidadeAlimento: validade,
   });
 
-  console.log(novoalimento.dataValidadeAlimento);
-  // console.log(dataFormatada);
+  // console.log(novoalimento.dataValidadeAlimento);
 
   const editarAlimento = () => {
     fetch(
@@ -68,9 +57,6 @@ function MostraModal(props) {
   const digitacao = (e) => {
     setAlimento({ ...novoalimento, [e.target.name]: e.target.value });
   };
-
-  // const [dia, mes, ano] = novoalimento.dataValidadeAlimento.split("/");
-  // const dataFormatada = `${ano}-${mes}-${dia}`;
 
   useEffect(() => {}, [novoalimento]);
 
@@ -98,7 +84,7 @@ function MostraModal(props) {
                   </StyledQuestionario>
                   <StyledQuestionario>
                     <input
-                      type="text"
+                      type="date"
                       name="dataValidadeAlimento"
                       onChange={digitacao}
                       placeholder="Edite a data de validade do alimento"

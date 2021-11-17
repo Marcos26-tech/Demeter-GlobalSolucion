@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
 
 const Produto = styled.div`
   background-color: #575454cf;
@@ -24,9 +25,9 @@ const Produto = styled.div`
   }
 `;
 export const Button = styled.button`
-  margin: 2px 0 0 88%;
+  margin: 20px;
   display: inline-block;
-  width: 10%;
+  width: 70%;
   padding: 5px 0;
   text-align: center;
   font-family: inherit;
@@ -50,24 +51,24 @@ export const Button = styled.button`
   }
 `;
 
-const selecionamercado = (id) => {
-  fetch("/rest/" + id, {
-    method: "get",
-  })
-    .then(() => window.location.replace("/selecionamercado" + id))
-    .catch((error) => {
-      console.log(error);
-    });
-};
-
 const CardMercado = (props) => {
+  const history = useHistory();
+
+  const selecionamercado = (id) => {
+    fetch(`http://localhost:8080/DemeterGlobalSolution/rest/reserva/${id}`, {
+      method: "get",
+    });
+    history.push("/alimento");
+  };
   return (
     <Produto>
-        <div>
-          <img src={props.foto} alt={props.nome} />
-          <h3>{props.nomeSupermercado}</h3>
-          <Button onClick={() => selecionamercado(props.id)}>Selecione o supermercado</Button>
-        </div>
+      <div>
+        <img src={props.foto} alt={props.nome} />
+        <h3>{props.nome}</h3>
+        <Button onClick={() => selecionamercado(props.id)}>
+          Selecione o supermercado
+        </Button>
+      </div>
     </Produto>
   );
 };

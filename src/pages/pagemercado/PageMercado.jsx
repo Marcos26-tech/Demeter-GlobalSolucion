@@ -4,7 +4,7 @@ import CardMercado from "../../components/cardcontainer/CardMercado";
 import { DivHome, H, Span } from "../../assets/style/StyleGloblal";
 import UserContext from "../../store/user-context";
 
-import mercado_1 from "../../assets/img/alimentos/mercado.gif"; 
+import mercado_1 from "../../assets/img/alimentos/mercado.gif";
 
 const images = {
   1: mercado_1,
@@ -43,7 +43,7 @@ const PageMercado = () => {
                 key={mercado.id}
                 id={mercado.id}
                 foto={images[1]}
-                nome={mercado.nomeSupermercado}
+                nome={mercado.razaoSocial}
               ></CardMercado>
             );
           })}
