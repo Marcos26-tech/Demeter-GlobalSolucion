@@ -11,17 +11,17 @@ const Produto = styled.div`
     width: 100%;
   }
   p {
-    text-align:center;
-    text-align:justify;
+    text-align: center;
+    text-align: justify;
   }
-  h3{
-    text-align:center;
+  h3 {
+    text-align: center;
   }
 `;
 export const Button = styled.button`
-  margin: 2px 0 0 88%;
+  margin: 5px 0 0 80%;
   display: inline-block;
-  width: 10%;
+  width: 20%;
   padding: 5px 0;
   text-align: center;
   font-family: inherit;
@@ -44,7 +44,6 @@ export const Button = styled.button`
     width: 19%;
   }
 `;
-
 
 const CardAlimento = (props) => {
   return (

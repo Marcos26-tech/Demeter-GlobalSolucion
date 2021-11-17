@@ -11,6 +11,7 @@ const Produto = styled.div`
   margin: 1rem;
   img {
     width: 100%;
+    height: 15rem;
   }
   p {
     text-align: center;
