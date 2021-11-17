@@ -8,10 +8,11 @@ const Produto = styled.div`
   background-color: #575454cf;
   border-radius: 10px;
   width: 30%;
-  padding: 5rem;
+  padding: 1.4rem;
   margin: 1rem;
   img {
     width: 100%;
+    height: 15rem;
   }
   p {
     text-align: center;

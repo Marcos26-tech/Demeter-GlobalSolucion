@@ -16,6 +16,7 @@ import alimento_9 from "../../assets/img/alimentos/acucar.jpg";
 import alimento_10 from "../../assets/img/alimentos/batata.jpg";
 import alimento_11 from "../../assets/img/alimentos/tomate.jpg";
 import alimento_12 from "../../assets/img/alimentos/roma.jpg";
+import alimentoGeral from "../../assets/img/alimentos/imagegeral.jpg";
 
 const images = {
   Banana: alimento_1,
@@ -67,7 +68,11 @@ function PageEditar() {
               <CardEditacao
                 key={alimento.idAlimento}
                 id={alimento.idAlimento}
-                foto={images[alimento.nomeAlimento]}
+                foto={
+                  images[alimento.nomeAlimento]
+                    ? images[alimento.nomeAlimento]
+                    : alimentoGeral
+                }
                 nome={alimento.nomeAlimento}
                 quantidade={alimento.quantidadeAlimento}
                 validade={dataFormatada}
