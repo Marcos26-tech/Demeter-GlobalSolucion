@@ -33,7 +33,6 @@ const PageMercado = () => {
           <Span>
             Selecione um dos Supermercados abaixo disponíveis em sua região
           </Span>
-          <img src={images} alt="assd" />
         </H>
         <CardContainer>
           {mercados.map((mercado) => {
