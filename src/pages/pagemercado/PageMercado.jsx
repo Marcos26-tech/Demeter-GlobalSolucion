@@ -4,7 +4,7 @@ import CardMercado from "../../components/cardcontainer/CardMercado";
 import { DivHome, H, Span } from "../../assets/style/StyleGloblal";
 import UserContext from "../../store/user-context";
 
-import mercado_1 from "../../assets/img/alimentos/mercado.gif"; /*não ta funcionando o gif ainda*/
+import mercado_1 from "../../assets/img/alimentos/mercado.gif"; 
 
 const images = {
   1: mercado_1,

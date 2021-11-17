@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import UserContext from "../../store/user-context";
 import CardContainer from "../../components/cardcontainer/CardContainer";
 import CardHome from "../../components/cardcontainer/CardHome";
 import { DivHome, H, Span } from "../../assets/style/StyleGloblal";
@@ -11,10 +12,11 @@ const images = {
 
 
 const PageAlimento = () => {
+  const userCtx = useContext(UserContext);
   const [alimentos, setalimentos] = useState([]);
 
   useEffect(() => {
-    fetch("/rest/estoque/2")
+    fetch(`http://localhost:8080/DemeterGlobalSolution/rest/estoque/${userCtx.idUsuario}`)
       .then((resp) => {
         return resp.json();
       })
