@@ -1,4 +1,6 @@
-import { React, useState } from "react";
+import { React, useState, useContext } from "react";
+import UserContext from "../../store/user-context";
+
 import {
   Container,
   Form,
@@ -14,8 +16,9 @@ import {
 //     id = props.match.params.id;
 //   }
 
-
 function PageCadastroAlimento() {
+  const userCtx = useContext(UserContext);
+
   const [novoAlimento, setReceita] = useState({
     nomeAlimento: "",
     quantidadeAlimento: "",
@@ -24,15 +27,18 @@ function PageCadastroAlimento() {
 
   const adicionarAlimento = (e) => {
     e.preventDefault();
-    fetch("/rest/cadastrar", {
-      method: "post",
+    fetch(
+      `http://localhost:8080/DemeterGlobalSolution/rest/estoque/cadastrar/${userCtx.idUsuario}`,
+      {
+        method: "post",
 
-      headers: {
-        "Content-Type": "application/json",
-      },
+        headers: {
+          "Content-Type": "application/json",
+        },
 
-      body: JSON.stringify(novoAlimento),
-    }).then(() => {
+        body: JSON.stringify(novoAlimento),
+      }
+    ).then(() => {
       alert("Alimento cadastrado com sucesso!");
     });
   };
@@ -41,15 +47,9 @@ function PageCadastroAlimento() {
     setReceita({ ...novoAlimento, [e.target.name]: e.target.value });
   };
 
-  function sair() {
-    localStorage.removeItem("isLogado");
-    window.location.replace("/login");
-  }
-
   return (
     <Container>
       <h6>Cadastre novos Alimentos na Plataforma</h6>
-      <Button onClick={sair}>Deslogar</Button>
       <Form onSubmit={adicionarAlimento}>
         <Dividir>
           <Divi>
@@ -62,7 +62,7 @@ function PageCadastroAlimento() {
             />
             <input
               type="number"
-              name="quantidade"
+              name="quantidadeAlimento"
               onChange={digitacao}
               required
               placeholder="Digite a quantidade disponivel do Alimento"
@@ -72,7 +72,7 @@ function PageCadastroAlimento() {
         <Div2>
           <input
             type="data"
-            name="validade"
+            name="dataValidadeAlimento"
             onChange={digitacao}
             placeholder="Digite a data de Validade do Alimento"
           />

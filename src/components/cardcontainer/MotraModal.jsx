@@ -43,11 +43,11 @@ function MostraModal(props) {
 
   const [novoalimento, setAlimento] = useState({
     quantidadeAlimento: quantidade,
-    dataValidadeAlimento: dataFormatada,
+    dataValidadeAlimento: validade,
   });
 
   console.log(novoalimento.dataValidadeAlimento);
-  console.log(dataFormatada);
+  // console.log(dataFormatada);
 
   const editarAlimento = () => {
     fetch(
@@ -69,8 +69,8 @@ function MostraModal(props) {
     setAlimento({ ...novoalimento, [e.target.name]: e.target.value });
   };
 
-  const [dia, mes, ano] = novoalimento.dataValidadeAlimento.split("/");
-  const dataFormatada = `${ano}-${mes}-${dia}`;
+  // const [dia, mes, ano] = novoalimento.dataValidadeAlimento.split("/");
+  // const dataFormatada = `${ano}-${mes}-${dia}`;
 
   useEffect(() => {}, [novoalimento]);
 
