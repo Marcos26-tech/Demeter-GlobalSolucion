@@ -6,7 +6,9 @@ import UserContext from "../../store/user-context";
 
 import mercado_1 from "../../assets/img/alimentos/mercado.gif"; /*não ta funcionando o gif ainda*/
 
-const images = { mercado_1 };
+const images = {
+  1: mercado_1,
+};
 
 const PageMercado = () => {
   const userCtx = useContext(UserContext);
@@ -40,10 +42,8 @@ const PageMercado = () => {
               <CardMercado
                 key={mercado.id}
                 id={mercado.id}
-                foto={
-                  images
-                } /*não ta funcionando o gif ainda para o supermercado*/
-                nome={mercado.nome}
+                foto={images[1]}
+                nome={mercado.nomeSupermercado}
               ></CardMercado>
             );
           })}

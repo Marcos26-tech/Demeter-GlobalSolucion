@@ -65,9 +65,9 @@ const CardMercado = (props) => {
     <Produto>
         <div>
           <img src={props.foto} alt={props.nome} />
-          <h3>{props.nome}</h3>
+          <h3>{props.nomeSupermercado}</h3>
+          <Button onClick={() => selecionamercado(props.id)}>Selecione o supermercado</Button>
         </div>
-        <Button onClick={() => selecionamercado(props.id)}></Button>
     </Produto>
   );
 };
