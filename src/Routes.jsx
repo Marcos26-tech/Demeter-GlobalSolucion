@@ -8,7 +8,7 @@ import editaralimento from "./pages/pageeditarproduto/PageEditar";
 import cadastroalimento from "./pages/pagecadastroalimento/PageCadastroAlimento";
 import alimento from "./pages/pagealimento/PageAlimento";
 import mercado from "./pages/pagemercado/PageMercado";
-import PageMercados from "./pages/pagemercados/PageMercados";
+import PageMercados from "./pages/pagemercado/PageMercado";
 import sobrenos from "./pages/pagesobrenos/PageSobreNos";
 
 function Routes() {
