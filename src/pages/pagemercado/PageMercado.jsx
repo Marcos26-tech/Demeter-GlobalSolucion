@@ -40,8 +40,8 @@ const PageMercado = () => {
           {mercados.map((mercado) => {
             return (
               <CardMercado
-                key={mercado.id}
-                id={mercado.id}
+                key={mercado.idUsuario}
+                id={mercado.idUsuario}
                 foto={images[1]}
                 nome={mercado.razaoSocial}
               ></CardMercado>

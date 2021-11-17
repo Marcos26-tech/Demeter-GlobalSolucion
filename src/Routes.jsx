@@ -22,7 +22,7 @@ function Routes() {
         <Route path="/forgetPassword" component={forgetPassword} />
         <Route path="/editar" component={editaralimento} />
         <Route path="/cadastroalimento" component={cadastroalimento} />
-        <Route path="/alimento" component={alimento} />
+        <Route path="/alimento/:id" component={alimento} />
         <Route path="/selecionamercado" component={mercado} />
         <Route path="/mercados" component={PageMercados} />
         <Route path="/sobrenos" component={sobrenos} />

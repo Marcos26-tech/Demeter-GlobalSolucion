@@ -55,10 +55,7 @@ const CardMercado = (props) => {
   const history = useHistory();
 
   const selecionamercado = (id) => {
-    fetch(`http://localhost:8080/DemeterGlobalSolution/rest/reserva/${id}`, {
-      method: "get",
-    });
-    history.push("/alimento");
+    history.push("/alimento/" + id);
   };
   return (
     <Produto>

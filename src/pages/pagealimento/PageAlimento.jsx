@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
-import UserContext from "../../store/user-context";
+import React, { useState, useEffect } from "react";
 import CardContainer from "../../components/cardcontainer/CardContainer";
 import CardHome from "../../components/cardcontainer/CardHome";
 import { DivHome, H, Span } from "../../assets/style/StyleGloblal";
@@ -11,12 +10,17 @@ const images = {
 };
 
 const PageAlimento = (props) => {
-  const userCtx = useContext(UserContext);
   const [alimentos, setalimentos] = useState([]);
+
+  let id = "";
+  let idMercado = null;
+  if (props.match.path.toLowerCase().includes("alimento")) {
+    idMercado = props.match.params.id;
+  }
 
   useEffect(() => {
     fetch(
-      `http://localhost:8080/DemeterGlobalSolution/rest/estoque/${userCtx.idUsuario}`
+      `http://localhost:8080/DemeterGlobalSolution/rest/reserva/alimentos/${idMercado}`
     )
       .then((resp) => {
         return resp.json();
@@ -43,8 +47,9 @@ const PageAlimento = (props) => {
 
             return (
               <CardHome
-                key={alimento.id}
-                id={alimento.id}
+                key={alimento.idAlimento}
+                id={alimento.idAlimento}
+                estoque={alimento.idEstoque}
                 foto={images[1]}
                 nome={alimento.nomeAlimento}
                 quantidade={alimento.quantidadeAlimento}
