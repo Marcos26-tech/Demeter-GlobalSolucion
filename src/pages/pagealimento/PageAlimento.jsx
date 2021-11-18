@@ -62,7 +62,6 @@ const PageAlimento = (props) => {
         <H>
           <Span>Os alimentos disponíveis para doação</Span>
         </H>
-
         <CardContainer>
           {alimentos.map((alimento) => {
             const [ano, mes, dia] = alimento.dataValidadeAlimento.split("-");
@@ -89,5 +88,4 @@ const PageAlimento = (props) => {
     </>
   );
 };
-
 export default PageAlimento;

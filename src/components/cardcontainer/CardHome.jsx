@@ -10,7 +10,6 @@ const Produto = styled.div`
   width: 30%;
   padding: 1.4rem;
   margin: 1rem;
-  
   img {
     width: 100%;
     height: 15rem;
@@ -29,6 +28,15 @@ const Produto = styled.div`
     margin-top: 1rem;
     text-align: center;
   }
+  @media (max-width: 783px) {
+    width: 100%;
+    padding: 1.4rem;
+    margin: 1rem;
+    img {
+      width: 100%;
+      height: 15rem;
+    }
+  }
 `;
 
 const CardHome = (props) => {
@@ -45,7 +53,7 @@ const CardHome = (props) => {
           <img src={props.foto} alt={props.nome} />
           <h3>{props.nome}</h3>
           <p>
-            <em>Quantidade disponivel: {props.quantidade}</em>
+            <em>Quantidade disponivel: {props.quantidade} Cxs</em>
           </p>
           <p>Data de validade {props.validade}</p>
           <Button onClick={() => showModal()}>Reservar alimento</Button>

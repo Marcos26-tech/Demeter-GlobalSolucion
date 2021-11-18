@@ -35,8 +35,6 @@ function MostraModal(props) {
     dataReservaAlimento: new Date().getTime(),
   });
 
-  console.log(novoalimento);
-
   const [status, setStatus] = useState({
     type: "",
     mensagem: "",
@@ -47,11 +45,9 @@ function MostraModal(props) {
       `http://localhost:8080/DemeterGlobalSolution/rest/reserva/reservar/${userCtx.idUsuario}`,
       {
         method: "post",
-
         headers: {
           "Content-Type": "application/json",
         },
-
         body: JSON.stringify(novoalimento),
       }
     )
@@ -95,13 +91,11 @@ function MostraModal(props) {
             ) : (
               ""
             )}
-
             <ModalHeader>
               <Span>
                 <h3>Editação do estoque dos Alimentos</h3>
               </Span>
             </ModalHeader>
-
             <Container>
               <ModalBody>
                 <Section>

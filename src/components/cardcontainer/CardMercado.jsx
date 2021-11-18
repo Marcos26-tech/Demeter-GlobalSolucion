@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 
 const Produto = styled.div`
-  background-color: #575454cf;
+  background-color: #807d7dcf;
   border-radius: 10px;
   width: 30%;
-  padding: 5rem;
+  padding: 1.4rem;
   margin: 1rem;
   img {
     width: 100%;
@@ -17,15 +17,21 @@ const Produto = styled.div`
   }
   h3 {
     text-align: center;
+    margin-top: 10px;
   }
-  h5 {
-    color: #f10a0a;
-    font-size: 18px;
-    margin: 0;
+  @media (max-width: 783px) {
+    width: 100%;
+    padding: 1.4rem;
+    margin: 1rem;
+    h3 {
+      text-align: center;
+      font-size: 15px;
+    }
   }
+
 `;
 export const Button = styled.button`
-  margin: 20px;
+  margin:  20px 0 20px 15%;
   display: inline-block;
   width: 70%;
   padding: 5px 0;
@@ -44,10 +50,10 @@ export const Button = styled.button`
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.16);
     transform: translate(0, -5px);
   }
-  @media (max-width: 783px) {
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 10px 0;
     font-size: 12px;
-    margin: 0 0 0 85%;
-    width: 19%;
   }
 `;
 

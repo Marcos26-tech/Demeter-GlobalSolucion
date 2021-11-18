@@ -1,17 +1,22 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  margin: 1rem 0 0;
-  padding: 0 50px;
+  margin: 1rem 0 1rem;
+  padding: 0 50px 1rem;
   background: rgb(247, 246, 246);
-  height: 100%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80%;
   h6 {
     font-size: 23px;
     text-align: center;
-    margin: 0 0 29px;
-    padding: 5px;
+    margin: 5px 0 29px;
+    padding: 10px;
     font-weight: bold;
-    color: rgb(12, 139, 1);
+    background: -webkit-linear-gradient(#c8003c, #fda085);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
   form {
     height: 100%;
@@ -75,33 +80,17 @@ export const Dividir = styled.div`
   }
 `;
 
-export const Div2 = styled.div`
-  display: flex;
-  margin: 10px;
-  input {
-    width: 50%;
-  }
-  @media (max-width: 789px) {
-    textarea {
-      margin: 2px;
-      height: 3.5rem;
-    }
-    label {
-      margin: 15px;
-      width: 2%;
-    }
-  }
-`;
-
 export const Button = styled.button`
-  background-color: rgb(25, 121, 6);
+  background-color: #c8003c;
   color: #fff;
+  border: none;
+  border-radius: 0.5rem;
   font-size: 1rem;
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  border: none;
+  margin-top: 1rem;
+  display: block;
   &:hover {
-    background-color: rgb(122, 243, 9);
+    background-color: #fda085;
     cursor: pointer;
   }
 `;

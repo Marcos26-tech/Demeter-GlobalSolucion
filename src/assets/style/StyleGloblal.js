@@ -11,6 +11,7 @@ export const DivHome = styled.div`
 export const H = styled.h1`
   text-align: center;
   line-height: 1.5rem;
+  
   :after {
     content: "";
     display: block;
@@ -22,6 +23,9 @@ export const H = styled.h1`
 export const Span = styled.span`
   background-color: #ffffff;
   padding: 0 9px 0 10px;
+  @media (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 

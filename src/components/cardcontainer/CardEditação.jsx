@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import styled from "styled-components";
 import Modal from "./MotraModal";
-import { Button } from "./CardAlimento";
+import { Button } from "./CardMercado";
 
 const Produto = styled.div`
   background-color: #575454cf;
@@ -16,9 +16,25 @@ const Produto = styled.div`
   p {
     text-align: center;
     text-align: justify;
+    margin-top: 1rem;
+    em {
+      font-size: 1.1rem;
+      color: #f70707;
+      text-align: center;
+    }
   }
   h3 {
+    margin-top: 1rem;
     text-align: center;
+  }
+  @media (max-width: 783px) {
+    width: 100%;
+    padding: 1.4rem;
+    margin: 1rem;
+    img {
+      width: 100%;
+      height: 15rem;
+    }
   }
 `;
 
@@ -34,12 +50,13 @@ const CardEditacao = (props) => {
       <Produto>
         <div>
           <img src={props.foto} alt={props.nome} />
-          <Button onClick={() => showModal()}>Editar</Button>
+          
           <h3>{props.nome}</h3>
           <p>
-            <em>Quantidade disponivel: {props.quantidade}</em>
+            <em>Quantidade disponivel em estoque: {props.quantidade} Cxs</em>
           </p>
           <p>{props.validade}</p>
+          <Button onClick={() => showModal()}>Editar alimento em estoque</Button>
         </div>
       </Produto>
 

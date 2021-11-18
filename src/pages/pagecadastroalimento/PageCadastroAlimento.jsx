@@ -5,7 +5,6 @@ import {
   Container,
   Form,
   Dividir,
-  Div2,
   Button,
   Divi,
 } from "../../assets/style/StyleCadastroAlimento";
@@ -47,6 +46,7 @@ function PageCadastroAlimento() {
       <Form onSubmit={adicionarAlimento}>
         <Dividir>
           <Divi>
+            <label>Nome do alimento</label>
             <input
               type="text"
               name="nomeAlimento"
@@ -54,6 +54,7 @@ function PageCadastroAlimento() {
               required
               placeholder="Digite o nome do Alimento"
             />
+            <label>Quantidade do Alimento</label>
             <input
               type="number"
               name="quantidadeAlimento"
@@ -61,20 +62,18 @@ function PageCadastroAlimento() {
               required
               placeholder="Digite a quantidade disponivel do Alimento"
             />
+            <label>Data de Validade do Alimento</label>
+            <input
+              type="date"
+              name="dataValidadeAlimento"
+              onChange={digitacao}
+              placeholder="Digite a data de Validade do Alimento"
+            />
           </Divi>
         </Dividir>
-        <Div2>
-          <input
-            type="date"
-            name="dataValidadeAlimento"
-            onChange={digitacao}
-            placeholder="Digite a data de Validade do Alimento"
-          />
-        </Div2>
         <Button type="submit">Cadastrar Alimento</Button>
       </Form>
     </Container>
   );
 }
-
 export default PageCadastroAlimento;

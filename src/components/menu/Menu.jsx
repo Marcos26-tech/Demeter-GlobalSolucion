@@ -7,7 +7,7 @@ const StyledMenu = styled.nav`
   margin-top: 2rem;
   width: 100%;
   height: 3rem;
-  background-color: #ca3636;
+  background-color: #d10038;
   ul {
     height: 100%;
     list-style: none;
@@ -33,6 +33,9 @@ const StyledMenu = styled.nav`
     color: #2c0501;
     padding-bottom: 0.25rem;
     font-weight: bold;
+  }
+  @media (max-width: 768px) {
+    font-size: 13px;
   }
 `;
 
