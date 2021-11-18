@@ -35,7 +35,7 @@ const images = {
 const PageAlimento = (props) => {
   const [alimentos, setalimentos] = useState([]);
 
-  let id = "";
+
   let idMercado = null;
   if (props.match.path.toLowerCase().includes("alimento")) {
     idMercado = props.match.params.id;
@@ -54,6 +54,7 @@ const PageAlimento = (props) => {
       .catch((error) => {
         console.log(error);
       });
+      // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
