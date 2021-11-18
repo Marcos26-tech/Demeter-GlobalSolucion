@@ -24,7 +24,7 @@ const Footer = () => {
   return (
     <>
       <StyledFooter>
-      <p>Copyright &copy; Grupo Deméter - {new Date().getFullYear()}</p>
+        <p>Copyright &copy; Grupo Deméter - {new Date().getFullYear()}</p>
       </StyledFooter>
     </>
   );

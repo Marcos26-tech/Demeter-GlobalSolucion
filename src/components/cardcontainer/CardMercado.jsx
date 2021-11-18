@@ -28,10 +28,9 @@ const Produto = styled.div`
       font-size: 15px;
     }
   }
-
 `;
 export const Button = styled.button`
-  margin:  20px 0 20px 15%;
+  margin: 20px 0 20px 15%;
   display: inline-block;
   width: 70%;
   padding: 5px 0;

@@ -11,7 +11,7 @@ export const DivHome = styled.div`
 export const H = styled.h1`
   text-align: center;
   line-height: 1.5rem;
-  
+
   :after {
     content: "";
     display: block;
@@ -27,7 +27,6 @@ export const Span = styled.span`
     font-size: 18px;
   }
 `;
-
 
 export const Container = styled.div`
   margin: 1rem 0 0;

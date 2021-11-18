@@ -35,18 +35,18 @@ export const Container = styled.div`
     margin-top: 1rem;
     display: block;
     border-radius: 0.5rem;
-    @media (max-width: 789px) {
-      width: 88%;
-      height: 6rem;
-    }
   }
-  @media (max-width: 789px) {
-    margin: 3rem 3% auto;
-    display: block;
-    padding: 15px;
+  @media (max-width: 783px) {
+    padding: 0;
+    margin: 0;
+    width: 100%;
     height: 100%;
     h6 {
-      font-size: 14px;
+      font-size: 18px;
+      text-align: center;
+      margin: 5px 0 29px;
+      padding: 10px;
+      font-weight: bold;
     }
   }
 `;
@@ -67,16 +67,6 @@ export const Dividir = styled.div`
   img {
     width: 15em;
     margin: auto;
-  }
-  @media (max-width: 789px) {
-    input {
-      width: 80%;
-      height: 1.5rem;
-    }
-    label {
-      margin: 15px;
-      width: 2%;
-    }
   }
 `;
 

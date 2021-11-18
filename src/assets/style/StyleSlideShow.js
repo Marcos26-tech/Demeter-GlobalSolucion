@@ -22,7 +22,7 @@ export const StyledCarrocelContainer = styled.div`
     width: 95%;
     padding: 1px;
     margin: 1px;
-  };
+  } ;
 `;
 
 export const StyledArrowContainer = styled.div`

@@ -50,13 +50,15 @@ const CardEditacao = (props) => {
       <Produto>
         <div>
           <img src={props.foto} alt={props.nome} />
-          
+
           <h3>{props.nome}</h3>
           <p>
             <em>Quantidade disponivel em estoque: {props.quantidade} Cxs</em>
           </p>
           <p>{props.validade}</p>
-          <Button onClick={() => showModal()}>Editar alimento em estoque</Button>
+          <Button onClick={() => showModal()}>
+            Editar alimento em estoque
+          </Button>
         </div>
       </Produto>
 

@@ -44,14 +44,14 @@ export const FormButton2 = styled.button`
   font-size: 14px;
   font-weight: 700;
   color: rgb(8, 8, 8);
-  background-color: rgb(14, 192, 118);
+  background-color: #dd2039;
   border: 0;
   border-radius: 35px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
   &:hover {
-    box-shadow: 0 15px 15px rgb(41, 231, 152);
+    box-shadow: 0 15px 15px #ff9052;
     transform: translate(0, -5px);
   }
   @media (max-width: 783px) {
@@ -68,14 +68,14 @@ export const FormButton3 = styled.button`
   font-size: 14px;
   font-weight: 700;
   color: rgb(8, 8, 8);
-  background-color: rgb(178, 224, 205);
+  background-color: #f3b895;
   border: 0;
   border-radius: 35px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
   &:hover {
-    box-shadow: 0 15px 15px rgb(110, 241, 187);
+    box-shadow: 0 15px 15px #ff9052;
     transform: translate(0, -5px);
   }
   @media (max-width: 783px) {
@@ -111,7 +111,7 @@ export const Span = styled.span`
   h3 {
     font-size: 18px;
     font-weight: bold;
-    color: rgb(12, 139, 1);
+    color: #dd2039;
     text-align: center;
     margin: 20px 0 0;
   }

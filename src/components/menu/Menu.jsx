@@ -36,6 +36,10 @@ const StyledMenu = styled.nav`
   }
   @media (max-width: 768px) {
     font-size: 13px;
+    height: 3rem;
+    li {
+      margin: 0 0.5rem;
+    }
   }
 `;
 

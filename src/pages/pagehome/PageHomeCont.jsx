@@ -48,9 +48,10 @@ const Div = styled.div`
   @media (max-width: 781px) {
     width: 100%;
     height: 100%;
-    margin-left: 2px;
+    margin-left: 2em;
+    margin-right:3em;
     h1 {
-      font-size: 14px;
+      font-size: 15px;
     }
     p {
       font-size: 13px;

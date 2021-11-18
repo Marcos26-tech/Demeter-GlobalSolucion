@@ -81,6 +81,11 @@ function MostraModal(props) {
       {!show && (
         <Modal>
           <ModalContent2021>
+            <ModalHeader>
+              <Span>
+                <h3>Reserva de Alimentos disponíveis para doação</h3>
+              </Span>
+            </ModalHeader>
             {status.type === "success" ? (
               <p style={{ color: "#033d11" }}>{status.mensagem}</p>
             ) : (
@@ -91,29 +96,24 @@ function MostraModal(props) {
             ) : (
               ""
             )}
-            <ModalHeader>
-              <Span>
-                <h3>Editação do estoque dos Alimentos</h3>
-              </Span>
-            </ModalHeader>
             <Container>
               <ModalBody>
                 <Section>
                   <StyledQuestionario>
+                    <label>Digite a quantidade para reservar</label>
                     <input
                       type="number"
                       name="quantidadeAlimentoReservado"
                       onChange={digitacao}
-                      placeholder="Edite a quantidade disponivel deste alimento"
+                      placeholder="Digite a quantidade para reserva este alimento"
+                      required
                     />
                   </StyledQuestionario>
                 </Section>
               </ModalBody>
               <ModalFooter>
                 <FormButton3 onClick={() => sairModal()}>Sair</FormButton3>
-                <FormButton2 onClick={() => reservaAlimento()}>
-                  salvar
-                </FormButton2>
+                <FormButton2 onClick={() => reservaAlimento()}>Reservar</FormButton2>
               </ModalFooter>
             </Container>
           </ModalContent2021>

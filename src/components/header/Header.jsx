@@ -25,8 +25,10 @@ const StyledHeader = styled.header`
   }
   @media (max-width: 783px) {
     img {
+      height: 80px;
+      width: 80px;
       padding: 10px 1px 0 0;
-      margin-right: 90px;
+      margin-right: 60px;
     }
   }
 `;
@@ -44,7 +46,8 @@ const Stylednovo = styled.div`
   }
   @media (max-width: 783px) {
     p {
-      margin-left: 11rem;
+      margin-left: 9rem;
+      font-size: 25px;
     }
   }
 `;

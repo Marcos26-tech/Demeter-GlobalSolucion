@@ -36,8 +36,6 @@ function MostraModal(props) {
     dataValidadeAlimento: validade,
   });
 
-  // console.log(novoalimento.dataValidadeAlimento);
-
   const editarAlimento = () => {
     fetch(
       `http://localhost:8080/DemeterGlobalSolution/rest/estoque/editar/${userCtx.idUsuario}/${id}`,
@@ -75,28 +73,30 @@ function MostraModal(props) {
               <ModalBody>
                 <Section>
                   <StyledQuestionario>
+                    <label>Edite a quantidade do alimento em estoque</label>
                     <input
                       type="number"
                       name="quantidadeAlimento"
                       onChange={digitacao}
                       placeholder="Edite a quantidade disponivel deste alimento"
+                      required
                     />
                   </StyledQuestionario>
                   <StyledQuestionario>
+                    <label>Edite a validade do alimento em estoque</label>
                     <input
                       type="date"
                       name="dataValidadeAlimento"
                       onChange={digitacao}
                       placeholder="Edite a data de validade do alimento"
+                      required
                     />
                   </StyledQuestionario>
                 </Section>
               </ModalBody>
               <ModalFooter>
                 <FormButton3 onClick={() => sairModal()}>Sair</FormButton3>
-                <FormButton2 onClick={() => editarAlimento()}>
-                  salvar
-                </FormButton2>
+                <FormButton2 onClick={() => editarAlimento()}>salvar</FormButton2>
               </ModalFooter>
             </Container>
           </ModalContent2021>
