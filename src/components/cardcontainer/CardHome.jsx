@@ -10,6 +10,7 @@ const Produto = styled.div`
   width: 30%;
   padding: 1.4rem;
   margin: 1rem;
+  
   img {
     width: 100%;
     height: 15rem;
@@ -17,14 +18,16 @@ const Produto = styled.div`
   p {
     text-align: center;
     text-align: justify;
+    margin-top: 1rem;
+    em {
+      font-size: 1.1rem;
+      color: #f70707;
+      text-align: center;
+    }
   }
   h3 {
+    margin-top: 1rem;
     text-align: center;
-  }
-  h5 {
-    color: #f10a0a;
-    font-size: 18px;
-    margin: 0;
   }
 `;
 
@@ -42,9 +45,9 @@ const CardHome = (props) => {
           <img src={props.foto} alt={props.nome} />
           <h3>{props.nome}</h3>
           <p>
-            <em> quantidade: {props.quantidade} </em>
+            <em>Quantidade disponivel: {props.quantidade}</em>
           </p>
-          <p>{props.validade}</p>
+          <p>Data de validade {props.validade}</p>
           <Button onClick={() => showModal()}>Reservar alimento</Button>
         </div>
       </Produto>

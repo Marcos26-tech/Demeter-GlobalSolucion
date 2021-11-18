@@ -34,7 +34,7 @@ const Div = styled.div`
   padding: 10px;
   text-align: justify;
   h1 {
-    font-size: 2em;
+    font-size: 1.9em;
     position: relative;
     display: block;
     margin: 10px;

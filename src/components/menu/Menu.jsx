@@ -17,23 +17,20 @@ const StyledMenu = styled.nav`
     align-items: center;
     justify-content: center;
   }
-
   li {
     margin: 0 1rem;
     line-height: 2rem;
   }
-
   a {
     font-weight: bold;
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
   }
-
   a:hover,
   a:active,
   a.active {
-    color: #1a0f0e;
+    color: #2c0501;
     padding-bottom: 0.25rem;
     font-weight: bold;
   }
