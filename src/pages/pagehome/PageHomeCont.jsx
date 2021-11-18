@@ -49,7 +49,7 @@ const Div = styled.div`
     width: 100%;
     height: 100%;
     margin-left: 2em;
-    margin-right:3em;
+    margin-right: 3em;
     h1 {
       font-size: 15px;
     }
@@ -61,7 +61,7 @@ const Div = styled.div`
 
 const Divi = styled.div`
   margin-top: 20px;
-  cursor:nome;;
+  cursor: nome; ;
 `;
 
 const Divivideo = styled.div`
@@ -79,7 +79,7 @@ function PageHomeCont() {
     <>
       <Section>
         <Div>
-          <h1>UMA NOVA FORMA DE FAZER DOAÇOES PARA QUEM MAIS PRECISA!</h1>
+          <h1>UMA NOVA FORMA DE FAZER DOAÇÕES PARA QUEM MAIS PRECISA!</h1>
           <p>
             O projeto consiste em que tanto os supermercados quanto as entidades
             assistenciais possam se cadastrar para ter acesso às funcionalidades
@@ -119,9 +119,9 @@ function PageHomeCont() {
           <h2>Quem somos?</h2>
           <h3>
             Deméter nasceu com a finalidade é reduzir a distância entre a comida
-            abundante que seria desperdiçada e aqueles que a necessitam e
-            infelizmente, não tem acesso a ela, sobretudo pela condição
-            socioeconômica.<a href="/sobrenos">saiba mais</a>
+            abundante desperdiçada e aqueles que a necessitam e infelizmente,
+            não tem acesso a ela, sobretudo pela condição socioeconômica.
+            {""} <a href="/sobrenos">saiba mais</a>
           </h3>
         </div>
       </Section>
