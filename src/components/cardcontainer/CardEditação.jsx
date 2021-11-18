@@ -55,7 +55,7 @@ const CardEditacao = (props) => {
           <p>
             <em>Quantidade disponivel em estoque: {props.quantidade} Cxs</em>
           </p>
-          <p>{props.validade}</p>
+          <p> Validade do alimento {props.validade}</p>
           <Button onClick={() => showModal()}>
             Editar alimento em estoque
           </Button>
@@ -65,7 +65,7 @@ const CardEditacao = (props) => {
       {show && (
         <Modal
           id={props.id}
-          quantidade={props.quantidadeAlimento}
+          quantidade={props.quantidadeAlimento} 
           validade={props.dataValidadeAlimento}
         ></Modal>
       )}

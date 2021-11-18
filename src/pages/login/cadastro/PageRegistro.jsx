@@ -124,12 +124,12 @@ function Registro() {
             <h2>Cadastro Deméter</h2>
           </FormHeader>
           {status.type === "success" ? (
-            <p style={{ color: "#072b0f" }}>{status.mensagem}</p>
+            <p style={{ color: "#1607e9" }}>{status.mensagem}</p>
           ) : (
             ""
           )}
           {status.type === "error" ? (
-            <p style={{ color: "#0a0707" }}>{status.mensagem}</p>
+            <p style={{ color: "#f70404" }}>{status.mensagem}</p>
           ) : (
             ""
           )}

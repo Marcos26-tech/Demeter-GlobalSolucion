@@ -18,8 +18,21 @@ export const Form = styled.form`
     font-size: 1rem;
     font-weight: bold;
   }
-  input {
-    
+  input[type="radio"]{
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    border: 5px solid;
+    margin-left: 12px;
+    position: relative;
+    top: -2px;
+    border-radius: 50%;
+    border-color: #070707;
+    background-color: #fff;
+    &:checked{
+      background-color: #070707;
+      border-color: #070707;
+    }
   }
 `;
 
