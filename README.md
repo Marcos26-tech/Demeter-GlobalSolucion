@@ -1,4 +1,14 @@
-# Okoshi-GlobalSolucion
+# Deméter-GlobalSolucion
+
+USUARIO CADASTRADOS PARA TESTE:
+
+USUARIO SUPERMERCADO --> 
+LOGIN:supermercado.oba@oba.com
+SENHA:obasupermercado
+
+USUARIO ENTIDADE ASSISTÊNCIAL--> 
+LOGIN:fome.zero@oba.com
+SENHA:fomezero
 
 ## Jonathan Felix || RM: 88082
 
