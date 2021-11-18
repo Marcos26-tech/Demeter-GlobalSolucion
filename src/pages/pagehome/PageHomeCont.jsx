@@ -10,9 +10,21 @@ const Section = styled.section`
   padding: 2em;
   align-items: center;
   color: #000000;
-  a{
+  a {
     color: #e40707;
     text-decoration: none;
+  }
+  @media (max-width: 781px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    h2 {
+      font-size: 18px;
+    }
+    h3 {
+      font-size: 14px;
+    }
   }
 `;
 
@@ -33,13 +45,32 @@ const Div = styled.div`
     display: block;
     margin: 10px;
   }
+  @media (max-width: 781px) {
+    width: 100%;
+    height: 100%;
+    margin-left: 2px;
+    h1 {
+      font-size: 14px;
+    }
+    p {
+      font-size: 13px;
+    }
+  }
 `;
 
 const Divi = styled.div`
-  width: 700px;
+  margin-top: 20px;
+  cursor:nome;;
+`;
+
+const Divivideo = styled.div`
+  width: 750px;
   height: 500px;
-  padding: 5px;
-  margin: 0 2rem 0 0;
+  padding: 0;
+  margin: 0;
+  @media (max-width: 781px) {
+    width: 100%;
+  } ;
 `;
 
 function PageHomeCont() {
@@ -59,19 +90,30 @@ function PageHomeCont() {
             que desejar, para posterior coleta no ponto informado pelo sistema.
           </p>
         </Div>
-        <Divi>
+        <Divivideo>
           <ShowSlide />
-        </Divi>
+          <h6>
+            Direitos de imagem autor:
+            <a
+              href="https://www.instagram.com/marcosnaofazisso/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {" "}
+              Marcos Vinicius Ferreira
+            </a>
+          </h6>
+        </Divivideo>
       </Section>
       <Section>
-        <div>
+        <Divi>
           <iframe
             title="gif"
             src="https://giphy.com/embed/gi7h31nLA9c6DVxpyn"
             width="200"
             height="150"
           ></iframe>
-        </div>
+        </Divi>
         <div>
           <h2>Quem somos?</h2>
           <h3>

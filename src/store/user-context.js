@@ -70,7 +70,6 @@ export const UserContextProvider = (props) => {
     setIsLoggedIn(true);
 
     history.push("/home");
-    // window.location.replace("/home");
   };
 
   const logoutHandler = () => {

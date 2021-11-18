@@ -1,4 +1,4 @@
-import React, {useContext } from "react";
+import React, { useContext, useState } from "react";
 import UserContext from "../../store/user-context";
 
 import {
@@ -16,13 +16,10 @@ import {
 function FormLogin() {
   const userCtx = useContext(UserContext);
 
-  const handleLogin = (event) => {
-    event.preventDefault();
-
-    const email = event.target[1].value;
-    const password = event.target[3].value;
-    console.log(email);
-    console.log(password);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const email = e.target[1].value;
+    const password = e.target[3].value;
     userCtx.login(email, password);
   };
 
@@ -50,6 +47,7 @@ function FormLogin() {
                 type="password"
                 id="password"
                 placeholder="Senha cadastrada"
+                required
               />
             </FormFieldset>
 
@@ -60,12 +58,14 @@ function FormLogin() {
 
           <FormFieldset>
             <FormLink href="/cadastro">
-              Não tem uma conta Clique aqui e junte-se a nós!
+              <p>Não tem conta? Cadastre-se!</p>
             </FormLink>
           </FormFieldset>
 
           <FormFieldset>
-            <FormLink href="/forgetPassword">Esqueceu sua senha!</FormLink>
+            <FormLink href="/forgetPassword">
+              <p>Esqueceu a senha?</p>
+            </FormLink>
           </FormFieldset>
         </FormBody>
       </FormWrapper>

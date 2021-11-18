@@ -55,9 +55,6 @@ function Registro() {
         });
       }
     });
-    const listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]");
-    listaUser.push(user);
-    localStorage.setItem("listaUser", JSON.stringify(listaUser));
   };
 
   function validate() {
@@ -114,10 +111,8 @@ function Registro() {
       user.regiaoUsuario &&
       user.cnpjUsuario &&
       user.cnpjUsuario.length > 14
-    ){
-      return (
-        (document.getElementById("form").style.visibility = "hidden")
-      )
+    ) {
+      return (document.getElementById("form").style.visibility = "hidden");
     }
   }
 
@@ -128,18 +123,16 @@ function Registro() {
           <FormHeader>
             <h2>Cadastro Deméter</h2>
           </FormHeader>
-
           {status.type === "success" ? (
-            <p style={{ color: "#033d11" }}>{status.mensagem}</p>
+            <p style={{ color: "#072b0f" }}>{status.mensagem}</p>
           ) : (
             ""
           )}
           {status.type === "error" ? (
-            <p style={{ color: "#ff0000" }}>{status.mensagem}</p>
+            <p style={{ color: "#0a0707" }}>{status.mensagem}</p>
           ) : (
             ""
           )}
-
           <Form onSubmit={addUser} id="form">
             <label>
               <input

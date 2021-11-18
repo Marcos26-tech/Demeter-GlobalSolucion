@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import styled from "styled-components";
 import PageHomeCont from "./PageHomeCont";
 import sol from "../video/sol.mp4";
@@ -14,7 +14,6 @@ const MainAreaStyled = styled.div`
     right: -400px;
     top: -300px;
   }
-
   video {
     width: 100%;
     height: 100%;
@@ -37,7 +36,7 @@ function PageHome() {
   return (
     <>
       <MainAreaStyled>
-        <video src={sol} muted playsInline autoPlay loop time="5000"></video>
+        <video src={sol} muted playsInline autoPlay loop></video>
         <InnerLayout>
           <PageHomeCont />
         </InnerLayout>

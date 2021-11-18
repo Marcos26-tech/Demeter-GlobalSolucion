@@ -11,7 +11,6 @@ export const StyleContainer = styled.div`
         padding: 0px;
     };
 `;
-
 export const Box = styled.div`
     display: flex;
     margin: 5rem;
@@ -72,7 +71,6 @@ export const Paragrafo = styled.p`
     justify-content: center; 
     @media(max-width:780px){
         width:100%;
-        padding:0;
-        margin-top:19rem;   
+        padding:0;   
     };
 `;

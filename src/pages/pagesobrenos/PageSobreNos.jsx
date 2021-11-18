@@ -13,19 +13,19 @@ function PageSobreNos() {
         <div>
           <Paragrafo>
             Neste projeto, usando a tecnologia como o meio para mitigar um
-            problema cada vez mais visivel em nossa sociedade capitalista a
-            fome. Atraves de uma solução que conecta supermercados a entidade
-            assitenciais, afim de diminuir o desperdicio de alimentos e combater
-            a fome.
+            problema cada vez mais visível em nossa sociedade capitalista a
+            fome. Através de uma solução que conecta supermercados a entidade
+            assistenciais, a fim de diminuir o desperdício de alimentos próximos
+            do vencimento e combater a fome.
           </Paragrafo>
           <Paragrafo>
-            Fisicamnete, habitamos um espaço, mas, sentimentalmente, somos
+            Fisicamente, habitamos um espaço, mas, sentimentalmente, somos
             habitados por uma memória. O que a memória ama fica eterno. Afinal o
             passado não reconhece seu lugar: está sempre presente. Mário
             Quintana - José Saramago - Adélia Prado
           </Paragrafo>
           <Paragrafo>
-            Somos estudantes universitários do curso de Análise e
+            Somos amigos e estudantes universitários  do curso de Análise e
             Desenvolvimento de Sistemas pela FIAP.
           </Paragrafo>
         </div>

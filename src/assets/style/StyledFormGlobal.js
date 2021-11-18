@@ -12,10 +12,14 @@ export const Section = styled.section`
 export const Form = styled.form`
   width: 100%;
   height: 21rem;
+  margin-top: 12px;
   label {
     color: #070707;
     font-size: 1rem;
     font-weight: bold;
+  }
+  input {
+    
   }
 `;
 
@@ -38,7 +42,7 @@ export const FormWrapper = styled.div`
   }
 `;
 export const FormHeader = styled.header`
-  margin: 50px 0 10px;
+  margin: 5px 0 10px;
   padding-top: 24px;
   padding-bottom: 19px;
   h2 {
@@ -117,8 +121,8 @@ export const FormButton = styled.button`
 `;
 
 export const FormLink = styled.a`
-  margin-top: 10rem;
   text-decoration: none;
+  text-align: center;
   font-size: 15px;
   color: rgb(223, 211, 211);
   cursor: pointer;
