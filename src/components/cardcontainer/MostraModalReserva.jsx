@@ -60,7 +60,8 @@ function MostraModal(props) {
             type: "success",
             mensagem: "Alimento reservado com sucesso!",
           });
-          // window.location.replace("/alimento/" + 2);
+          alert("Entraremos em contado para informar o local de retirada dos alimentos Obrigado!");
+          //window.location.replace("/alimento/" + 2);
         } else {
           setStatus({
             type: "error",
