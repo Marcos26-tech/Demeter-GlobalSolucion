@@ -15,7 +15,7 @@ function PageSobreNos() {
             Neste projeto, usando a tecnologia como o meio para mitigar um
             problema cada vez mais visível em nossa sociedade capitalista a
             fome. Através de uma solução que conecta supermercados a entidade
-            assistenciais, a fim de diminuir o desperdício de alimentos próximos
+            assistênciais, a fim de diminuir o desperdício de alimentos próximos
             do vencimento e combater a fome.
           </Paragrafo>
           <Paragrafo>

@@ -133,7 +133,7 @@ function PageHomeCont() {
         <div>
           <h2>Quem somos?</h2>
           <h3>
-            Deméter nasceu com a finalidade é reduzir a distância entre a comida
+            Deméter é considerada a deusa da agricultura na mitologia Grega, ela era quem nutria a terra. E usando desse pensamento a plataforma Deméter nasceu com a finalidade de reduzir a distância entre a comida
             abundante desperdiçada e aqueles que a necessitam e infelizmente,
             não tem acesso a ela, sobretudo pela condição socioeconômica.
             {""} <a href="/sobrenos">saiba mais</a>
