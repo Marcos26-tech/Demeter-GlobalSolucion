@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import ShowSlide from "./SlideShow";
+import fluxo from "../../assets/img/fluxo.jpg";
+
 
 const Section = styled.section`
   width: 100%;
@@ -25,6 +27,19 @@ const Section = styled.section`
     h3 {
       font-size: 14px;
     }
+  }
+`;
+
+const Div10 = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin: 0;
+  padding: 2em;
+  align-items: center;
+  img{
+    width: 100%;
+    border-radius: 10px;
   }
 `;
 
@@ -128,10 +143,9 @@ function PageHomeCont() {
       <Section>
         <div>
           <h2>Como funciona?</h2>
-          <h3>
-            pode ser uma img ilustrando o caminho que o usuário segue até chegar
-            ao objetivo. em construção
-          </h3>
+          <Div10>
+            <img src={fluxo} alt="fluxo do site" />
+          </Div10>
         </div>
       </Section>
     </>
