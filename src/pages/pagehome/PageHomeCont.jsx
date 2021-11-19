@@ -50,7 +50,7 @@ const Div = styled.div`
   text-align: justify;
   h1 {
     font-family:Birthstone;
-    font-size: 2.5em;
+    font-size: 2.4em;
     position: relative;
     display: block;
     margin: 10px;
