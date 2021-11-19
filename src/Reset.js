@@ -6,7 +6,7 @@ export default createGlobalStyle`
     margin: 0px;
     outline: 0px;
     box-sizing: border-box;
-    font-family:'Robot',sans-serif;  
+    font-family:Popins, sans-serif;;  
   }
   
   html,body, #root{

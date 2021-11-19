@@ -49,7 +49,8 @@ const Div = styled.div`
   padding: 10px;
   text-align: justify;
   h1 {
-    font-size: 1.9em;
+    font-family:Birthstone;
+    font-size: 2.5em;
     position: relative;
     display: block;
     margin: 10px;
