@@ -1,6 +1,6 @@
 # Deméter-GlobalSolucion
 
-USUARIO CADASTRADOS PARA TESTE:
+USUARIOS CADASTRADOS PARA TESTE:
 
 USUARIO SUPERMERCADO --> 
 LOGIN:supermercado.oba@oba.com
